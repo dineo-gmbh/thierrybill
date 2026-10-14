@@ -1,0 +1,9 @@
+<svg width="126" height="168" viewBox="0 0 126 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M84 52.5C78.2145 52.5 73.5 47.7855 73.5 42V0H10.5C4.7145 0 0 4.7145 0 10.5V157.5C0 163.296 4.7145 168 10.5 168H115.5C121.296 168 126 163.296 126 157.5V52.5H84ZM42 147H21V115.5H42V147ZM73.5 147H52.5V94.5H73.5V147ZM105 147H84V73.5H105V147Z" fill="url(#weekly-summary-doc-grad)"/>
+<defs>
+<linearGradient id="weekly-summary-doc-grad" x1="63" y1="0" x2="63" y2="168" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6B83B3"/>
+<stop offset="1" stop-color="#37486B"/>
+</linearGradient>
+</defs>
+</svg>

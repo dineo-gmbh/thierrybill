@@ -1,0 +1,287 @@
+# Translation of Plugins - CF7 Apps – Honeypot, Database, Redirection, Webhook, and Addons for Contact Form 7 - Stable (latest release) in German (Switzerland)
+# This file is distributed under the same license as the Plugins - CF7 Apps – Honeypot, Database, Redirection, Webhook, and Addons for Contact Form 7 - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-01-17 10:06:14+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.1.0\n"
+"Language: de_CH\n"
+"Project-Id-Version: Plugins - CF7 Apps – Honeypot, Database, Redirection, Webhook, and Addons for Contact Form 7 - Stable (latest release)\n"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1253
+msgid "disable Accessibility Label"
+msgstr "Barrierefreiheits-Label deaktivieren"
+
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:81
+#: src/templates/honeypot/HoneypotForms.js:144
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:69
+msgid "no"
+msgstr "nein"
+
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:66
+msgid "yes"
+msgstr "ja"
+
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:18
+#: src/templates/cf7Entries/cf7Entries.js:759
+#: src/templates/honeypot/HoneypotForms.js:130
+msgid "Action"
+msgstr "Aktion"
+
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:17
+msgid "Date"
+msgstr "Datum"
+
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:15
+#: src/templates/honeypot/HoneypotForms.js:127
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:14
+#: src/templates/honeypot/HoneypotForms.js:126
+msgid "Title"
+msgstr "Titel"
+
+#: includes/apps/honeypot/honeypot.php:23
+#: includes/apps/weekly-summary/templates/email-report.php:256
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:193
+msgid "Forms"
+msgstr "Formulare"
+
+#: includes/apps/cf7-entries/cf7-entries.php:35
+#: includes/apps/honeypot/honeypot.php:22
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:189
+#: includes/apps/cf7-internal-settings/src/utils/menuParent.js:32
+#: src/screens/Apps.js:14 src/utils/appCardTheme.js:8
+#: src/utils/menuParent.js:43
+msgid "General"
+msgstr "Allgemein"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1131
+#: legacy-honeypot/includes/honeypot4cf7.php:1246
+msgid "Move inline CSS"
+msgstr "Inline-CSS verschieben"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1113
+#: legacy-honeypot/includes/honeypot4cf7.php:1232
+msgid "Placeholder"
+msgstr "Platzhalter"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1104
+#: legacy-honeypot/includes/honeypot4cf7.php:1225
+msgid "Wrapper ID"
+msgstr "Wrapper-ID"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1095
+msgid "Class"
+msgstr "Klasse"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1086
+#: src/templates/cf7Entries/cf7Entries.js:744
+msgid "ID"
+msgstr "ID"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1080
+msgid "Optional Settings"
+msgstr "Optionale Einstellungen"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1075
+msgid "For better security, change \"honeypot\" to something more appealing to a bot, such as text including \"email\" or \"website\"."
+msgstr "Ändern Sie «honeypot» zu etwas attraktiverem für einen Bot, wie ein Text mit «email» oder «website» für eine höhere Sicherheit."
+
+#. translators: %s: Link to Honeypot settings page
+#: legacy-honeypot/includes/honeypot4cf7.php:1059
+#: legacy-honeypot/includes/honeypot4cf7.php:1183
+msgid "Generate a form-tag for a spam-stopping honeypot field. Check out %s for more settings/info."
+msgstr "Generieren Sie ein Formular-Tag für ein Spam-blockierendes Honeypot-Feld. Schauen Sie sich %s für weitere Einstellungen/Informationen an."
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1037
+msgid "Honeypot for CF7"
+msgstr "Honeypot for CF7"
+
+#. translators: %s: honeypot field ID
+#: legacy-honeypot/includes/honeypot4cf7.php:712
+msgid "Something is stuck in the honey. Field ID = %s"
+msgstr "Etwas ist im Honig stecken geblieben. Feld-ID = %s"
+
+#. translators: 1: spam count 2: install date
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:433
+msgid "Honeypot has stopped %1$s spam submissions since %2$s"
+msgstr "Honeypot hat %1$s Spam-Einsendungen seit %2$s gestoppt"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:411
+msgid "Reset to Defaults"
+msgstr "Auf Standard zurücksetzen"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:410
+msgid "Save"
+msgstr "Speichern"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:389
+#: legacy-honeypot/includes/honeypot4cf7.php:1153
+#: legacy-honeypot/includes/honeypot4cf7.php:1263
+msgid "seconds"
+msgstr "Sekunden"
+
+#: includes/apps/honeypot/honeypot.php:90
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:387
+#: legacy-honeypot/includes/honeypot4cf7.php:1149
+#: legacy-honeypot/includes/honeypot4cf7.php:1260
+msgid "Enable Time Check"
+msgstr "Zeit-Überprüfung aktivieren"
+
+#: includes/apps/honeypot/honeypot.php:83
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:377
+#: legacy-honeypot/includes/honeypot4cf7.php:1140
+msgid "Disable Accessibility Label"
+msgstr "Barrierefreiheits-Label deaktivieren"
+
+#: includes/apps/honeypot/honeypot.php:77
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:373
+msgid "By default Honeypot uses inline CSS on the honeypot field to hide it. Checking this box moves that CSS to the footer of the page. It may help confuse bots."
+msgstr "Standardmässig verwendet Honeypot Inline-CSS für das Honeypot-Feld, um es auszublenden. Wenn Sie dieses Auswahlkästchen aktivieren, wird das CSS in den Footer der Seite verschoben. Das kann helfen, Bots zu verwirren."
+
+#: includes/apps/honeypot/honeypot.php:91
+#: includes/apps/honeypot/honeypot.php:97
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:393
+msgid "If enabled, this will perform an additional check for spam bots using the time it takes to submit the form under the idea that bots submit forms faster than people. The value is set to 4 seconds by default, but adjust based on your needs. If you're not sure, leave this unchecked."
+msgstr "Wenn aktiviert, wird dies eine zusätzliche Überprüfung für Spam-Bots hinzufügen, indem die Zeit überprüft wird, die es dauert, ein Formular abzusenden. Die Idee dahinter ist, dass Bots ein Formular schneller absenden als Menschen. Der Wert ist standardmässig auf 4 Sekunden gesetzt, aber passen Sie ihn an Ihre Bedürfnisse an. Wenn Sie sich unsicher sind, lassen Sie dies hier nicht ausgewählt."
+
+#: includes/apps/honeypot/honeypot.php:76
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:367
+msgid "Move Inline CSS"
+msgstr "Inline-CSS verschieben"
+
+#: includes/apps/honeypot/honeypot.php:70
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:363
+msgid "To assure the honeypot isn't auto-completed by a browser, we add an atypical \"autocomplete\" attribute value. If you have any problems with this, you can switch it to the more standard (but less effective) \"off\" value. If you're unsure, leave this unchecked."
+msgstr "Um sicherzustellen, dass der Honeypot nicht automatisch vom Browser ausgefüllt wird, fügen wir einen nicht-typischen Wert für das «autocomplete»-Attribut hinzu. Wenn Sie Probleme damit haben, können Sie es zu dem eher standardmässigen (aber weniger effektivem) Wert «off» ändern. Wenn Sie sich unsicher sind, lassen Sie dies hier nicht ausgewählt."
+
+#: includes/apps/honeypot/honeypot.php:69
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:357
+#: legacy-honeypot/includes/honeypot4cf7.php:1122
+#: legacy-honeypot/includes/honeypot4cf7.php:1239
+msgid "Use Standard Autocomplete Value"
+msgstr "Standard-Autovervollständigungswert benutzen"
+
+#. translators: %s: default value
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:349
+msgid "You can customize the (hidden) accessibility message, or just leave it the default value: %s"
+msgstr "Sie können diese (versteckte) Barrierefreiheits-Nachricht anpassen oder sie beim Standardwert belassen: %s"
+
+#: includes/apps/honeypot/honeypot.php:63
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:339
+msgid "Accessibility Message"
+msgstr "Barrierefreiheits-Nachricht"
+
+#: includes/apps/honeypot/honeypot.php:59
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:335
+msgid "If using placeholders on other fields, this can help honeypot mimic a \"real\" field. This can be overridden in the contact form. If you're unsure, leave blank."
+msgstr "Wenn Sie Platzhalter bei anderen Feldern benutzen, kann dies Honeypot helfen, ein «reales» Feld zu imitieren. Dies kann im Kontaktformular überschrieben werden. Wenn Sie sich unsicher sind, lassen Sie es leer."
+
+#: includes/apps/honeypot/honeypot.php:57
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:329
+msgid "Global Placeholder"
+msgstr "Globaler Platzhalter"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:322
+msgid "Flamingo"
+msgstr "Flamingo"
+
+#. translators: 1: Link to Flamingo plugin page
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:321
+msgid "(Recommended) By default the Honeypot field is not stored with other fields in form-saving plugins like %1$s. However, saving the field can be useful to see what spam bots are leaving behind to help you improve your spam stopping superpowers. If you'd like to store the value of the field, simply check this box (and install %1$s)."
+msgstr "(Empfohlen) Standardmässig wird das Honeypot-Feld nicht mit anderen Feldern in Plugins für die Formularspeicherung wie %1$s gespeichert. Dennoch kann das Speichern des Feldes sinnvoll sein, wenn Sie sehen, was Spam-Bots zurücklassen, um Ihnen zu helfen, Ihre Spam-Blockierung-Superkräfte zu verbessern. Wenn Sie den Wert des Feldes speichern möchten, aktivieren Sie einfach dieses Auswahlkästchen (und installieren Sie %1$s)."
+
+#: includes/apps/honeypot/honeypot.php:51
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:302
+msgid "Store Honeypot Value"
+msgstr "Honeypot-Wert speichern"
+
+#: includes/apps/honeypot/honeypot.php:38
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:298
+msgid "Below are global settings for the Honeypot plugin. Many of these settings can be overridden when inserting the Honeypot field shortcode when creating your CF7 contact form."
+msgstr "Unten finden Sie globale Einstellungen für das Honeypot-Plugin. Viele dieser Einstellungen können überschrieben werden, wenn Sie den Honeypot-Feld-Shortcode beim Erstellen eines CF7-Kontaktformulars einfügen."
+
+#: includes/apps/honeypot/honeypot.php:37
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:297
+#: legacy-honeypot/includes/honeypot4cf7.php:1056
+#: legacy-honeypot/includes/honeypot4cf7.php:1180
+msgid "Honeypot Settings"
+msgstr "Honeypot-Einstellungen"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:295
+msgid "Get Support"
+msgstr "Support erhalten"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:284
+msgid "The changes have been saved."
+msgstr "Die Änderungen wurden gespeichert."
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:239
+msgid "The settings have been reset to their defaults."
+msgstr "Die Einstellungen wurden auf die Standardwerte zurückgesetzt."
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:96
+#: src/components/CF7AppsApp.js:150
+msgid "Settings"
+msgstr "Einstellungen"
+
+#. translators: %s: Link to Contact Form 7 plugin page.
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:64
+msgid "The version of %s that is installed will not work with this version of Honeypot for CF7."
+msgstr "Die Version von %s, die installiert ist, wird mit dieser Version von Honeypot for CF7 nicht funktionieren."
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:49
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:65
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:179
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:204
+msgid "Honeypot for Contact Form 7"
+msgstr "Honeypot for Contact Form 7"
+
+#: includes/apps/honeypot/honeypot.php:84
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:383
+msgid "If checked, the accessibility label will not be generated. This is not recommended, but may improve spam blocking. If you're unsure, leave this unchecked."
+msgstr "Wenn diese Option aktiviert ist, wird das Barrierefreiheits-Label nicht generiert. Dies wird nicht empfohlen, kann aber den Spamschutz verbessern. Wenn Sie unsicher sind, lassen Sie es abgewählt."
+
+#: includes/apps/acf-integration/includes/class-cf7-acf-integration.php:230
+#: legacy-honeypot/includes/honeypot4cf7.php:1165
+msgid "Insert Tag"
+msgstr "Schlagwort einfügen"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1068
+msgid "Name"
+msgstr "\tName"
+
+#: legacy-honeypot/includes/honeypot4cf7.php:1036
+msgid "Generate a form-tag for a spam-stopping honeypot field. For more details, see %s."
+msgstr "Generiert ein Formular-Tag als Honeypot-Feld gegen Spam. Für weitere Informationen, betrachten Sie %s."
+
+#: includes/apps/honeypot/honeypot.php:13
+#: legacy-honeypot/includes/class-honeypot4cf7-data-table.php:16
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:180
+#: legacy-honeypot/includes/honeypot4cf7.php:1030
+#: legacy-honeypot/includes/honeypot4cf7.php:1210
+#: src/templates/honeypot/HoneypotForms.js:128
+msgid "Honeypot"
+msgstr "Honeypot"
+
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:350
+#: legacy-honeypot/includes/honeypot4cf7.php:394
+#: legacy-honeypot/includes/honeypot4cf7.php:467
+msgid "Please leave this field empty."
+msgstr "Bitte lassen Sie dieses Feld leer."
+
+#. translators: %s: Link to Contact Form 7 plugin page.
+#: legacy-honeypot/includes/honeypot4cf7-admin.php:48
+msgid "%s must be installed and activated for the CF7 Honeypot plugin to work"
+msgstr "%s muss installiert und aktiviert sein, damit CF7 Honeypot funktioniert"

@@ -1,0 +1,21 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(9.002 0)">
+<path d="M35.0002 21.875C32.5896 21.875 30.6252 19.9106 30.6252 17.5V0H4.37523C1.96461 0 0.00023201 1.96438 0.00023201 4.375V65.625C0.00023201 68.04 1.96461 70 4.37523 70H48.1252C50.5402 70 52.5002 68.04 52.5002 65.625V21.875H35.0002Z" fill="url(#weekly-summary-logo-grad)"/>
+<path fill="#FFFFFF" d="M8.75023 48.125H17.5002V61.25H8.75023Z"/>
+<path fill="#FFFFFF" d="M21.8752 39.375H30.6252V61.25H21.8752Z"/>
+<path fill="#FFFFFF" d="M35.0002 30.625H43.7502V61.25H35.0002Z"/>
+</g>
+<g transform="translate(44.002 0)">
+<path d="M0 0V17.5H17.5L0 0Z" fill="url(#weekly-summary-logo-fold-grad)"/>
+</g>
+<defs>
+<linearGradient id="weekly-summary-logo-grad" x1="26.2502" y1="0" x2="26.2502" y2="70" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6B83B3"/>
+<stop offset="1" stop-color="#37486B"/>
+</linearGradient>
+<linearGradient id="weekly-summary-logo-fold-grad" x1="8.75" y1="0" x2="8.75" y2="17.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6B83B3"/>
+<stop offset="1" stop-color="#37486B"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,553 @@
+/*
+Theme Name: Thierry Bill
+Theme URI: https://thierrybill.ch
+Author: Thierry Bill
+Description: Block-Theme für Thierry Bill – Musiker, Tattoo-Artist, Grafikdesigner. Schlichtes Portfolio: gebrochenes Weiss, schwarz, eine Schrift (Inter, lokal), grosser Titel als Hero, 12-Spalten-Raster, Fotos in Schwarz-Weiss.
+Version: 4.0.0
+Requires at least: 6.6
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+Text Domain: thierrybill
+*/
+
+/*
+ * Raster: jeder Abschnitt (.tb-spread) ist ein 12-Spalten-Grid. Zellen (.tb-cell) werden mit
+ * .tb-at-N (Startspalte) und .tb-w-N (Breite) platziert. Titel stehen in Spalte 1–4, Text in 5–10.
+ * Unter 782 px: alles einspaltig.
+ */
+
+:root {
+	--tb-gap: clamp(0.75rem, 1.2vw, 1.25rem);
+	--tb-space: clamp(4rem, 8vw, 7.5rem);
+}
+
+body {
+	overflow-x: clip;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+	background: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 1px;
+}
+
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+/* ---------- Raster ---------- */
+
+.tb-spread {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	column-gap: var(--tb-gap);
+	row-gap: 2rem;
+}
+
+.tb-spread > * {
+	margin: 0 !important;
+	min-width: 0;
+}
+
+.tb-main .tb-spread {
+	padding-top: var(--tb-space);
+}
+
+.tb-main .tb-tiles {
+	padding-top: calc(var(--tb-space) * 0.6);
+}
+
+.tb-cell {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	grid-column-end: span 12;
+}
+
+.tb-cell > * {
+	margin: 0 !important;
+}
+
+@media (min-width: 782px) {
+	.tb-at-1 { grid-column-start: 1; }
+	.tb-at-2 { grid-column-start: 2; }
+	.tb-at-3 { grid-column-start: 3; }
+	.tb-at-4 { grid-column-start: 4; }
+	.tb-at-5 { grid-column-start: 5; }
+	.tb-at-6 { grid-column-start: 6; }
+	.tb-at-7 { grid-column-start: 7; }
+	.tb-at-8 { grid-column-start: 8; }
+	.tb-at-9 { grid-column-start: 9; }
+	.tb-at-10 { grid-column-start: 10; }
+	.tb-at-11 { grid-column-start: 11; }
+	.tb-at-12 { grid-column-start: 12; }
+	.tb-w-1 { grid-column-end: span 1; }
+	.tb-w-2 { grid-column-end: span 2; }
+	.tb-w-3 { grid-column-end: span 3; }
+	.tb-w-4 { grid-column-end: span 4; }
+	.tb-w-5 { grid-column-end: span 5; }
+	.tb-w-6 { grid-column-end: span 6; }
+	.tb-w-7 { grid-column-end: span 7; }
+	.tb-w-8 { grid-column-end: span 8; }
+	.tb-w-9 { grid-column-end: span 9; }
+	.tb-w-10 { grid-column-end: span 10; }
+	.tb-w-11 { grid-column-end: span 11; }
+	.tb-w-12 { grid-column-end: span 12; }
+}
+
+/* ---------- Typografie ---------- */
+
+.tb-title {
+	font-size: inherit !important;
+	font-weight: 500;
+	line-height: inherit;
+	letter-spacing: inherit;
+	margin: 0;
+}
+
+.tb-big {
+	font-size: var(--wp--preset--font-size--l);
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+	max-width: 30ch;
+	margin-bottom: 0.5em !important;
+}
+
+/* Links im Inhalt dezent unterstrichen */
+.tb-main p a {
+	text-decoration: underline;
+	text-decoration-color: var(--wp--preset--color--line);
+}
+
+.tb-main p a:hover {
+	text-decoration-color: currentColor;
+}
+
+.tb-caption {
+	margin-top: -0.4em !important;
+}
+
+.tb-note {
+	color: var(--wp--preset--color--muted);
+}
+
+/* Begriff / Wert */
+.tb-row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	gap: var(--tb-gap);
+}
+
+.tb-cell > .tb-row + .tb-row {
+	margin-top: -0.6em !important;
+}
+
+.tb-row > span:first-child {
+	color: var(--wp--preset--color--muted);
+}
+
+/* Fliesstext in einfachen Seiten (Impressum, Datenschutz) */
+.tb-prose > * + * {
+	margin-top: 1em !important;
+}
+
+.tb-prose h2,
+.tb-prose h3 {
+	font-size: inherit;
+	font-weight: 500;
+	margin-top: 2em !important;
+}
+
+/* ---------- Bilder ---------- */
+
+.tb-img {
+	margin: 0;
+	background: var(--wp--preset--color--surface);
+}
+
+.tb-img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale(1);
+}
+
+.tb-r-45 img, .tb-r-45.tb-ph { aspect-ratio: 4 / 5; }
+.tb-r-43 img, .tb-r-43.tb-ph { aspect-ratio: 4 / 3; }
+.tb-r-32 img { aspect-ratio: 3 / 2; }
+
+.tb-ph {
+	background: var(--wp--preset--color--surface);
+}
+
+
+/* ---------- Hero: grosser Titel, Unterzeile, Bildfolge, Pfeil-Links ---------- */
+
+.tb-main .tb-hero {
+	padding-top: 0;
+	min-height: calc(100svh - 4rem);
+	grid-template-rows: 1fr auto;
+	row-gap: 2.5rem;
+	padding-bottom: 1.5rem;
+}
+
+/* Unterseiten: etwas niedriger, ohne Pfeil-Links; nur Text (Kontakt): so hoch wie noetig */
+.tb-main .tb-hero--page {
+	min-height: 78svh;
+}
+
+.tb-main .tb-hero--text {
+	min-height: 0;
+	padding-top: var(--tb-space);
+	padding-bottom: 0;
+}
+
+.tb-hero__name {
+	grid-row: 1;
+	align-self: center;
+	width: fit-content;
+	gap: 0.6rem;
+}
+
+.tb-display {
+	font-size: clamp(3rem, 9.2vw, 10.5rem) !important;
+	font-weight: 500 !important;
+	line-height: 0.92 !important;
+	letter-spacing: -0.055em !important;
+	margin: 0;
+	margin-left: -0.05em !important;
+}
+
+.tb-display--mark::after {
+	content: "©";
+	display: inline-block;
+
+	font-size: 0.22em;
+	font-weight: 400;
+	letter-spacing: 0;
+	vertical-align: top;
+	position: relative;
+	top: 0.35em;
+	margin-left: 0.15em;
+}
+
+/* Kernaussage als H2: gleiche Optik wie der grosse Absatz */
+h2.tb-big {
+	font-weight: 400;
+	margin-top: 0;
+}
+
+.tb-hero__sub {
+	align-self: flex-end;
+	font-size: var(--wp--preset--font-size--m);
+	letter-spacing: -0.01em;
+}
+
+.tb-hero__media {
+	grid-row: 1 / span 2;
+	align-self: center;
+	gap: 0.5rem;
+}
+
+.tb-count {
+	font-size: var(--wp--preset--font-size--xs);
+	font-variant-numeric: tabular-nums;
+}
+
+.tb-slides {
+	display: grid !important;
+	cursor: pointer;
+}
+
+.tb-slides > .tb-slide {
+	grid-area: 1 / 1;
+	margin: 0 !important;
+}
+
+/* Mit JS: nur das aktive Bild sichtbar, weiche Ueberblendung. Ohne JS: nur das erste. */
+.tb-slides > .tb-slide + .tb-slide {
+	visibility: hidden;
+}
+
+.tb-hero__media.is-ready .tb-slide {
+	visibility: visible;
+	opacity: 0;
+	transition: opacity 0.6s ease;
+}
+
+.tb-hero__media.is-ready .tb-slide.is-active {
+	opacity: 1;
+}
+
+.tb-hero__links {
+	grid-row: 2;
+	align-self: end;
+}
+
+.tb-hero__links p {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 1.75rem;
+}
+
+.tb-hero__links a {
+	text-decoration: none !important;
+}
+
+.tb-hero__links a:hover {
+	text-decoration: underline !important;
+}
+
+.tb-hero__links span {
+	display: inline-block;
+	margin-left: 0.2em;
+}
+
+/* ---------- Header ---------- */
+
+.tb-header {
+	padding-block: 1.25rem;
+}
+
+.tb-header__grid {
+	align-items: baseline;
+}
+
+.tb-header__grid > .tb-cell {
+	display: block;
+}
+
+.tb-header__grid > .tb-nav {
+	display: flex;
+	flex-direction: row;
+}
+
+.tb-header .wp-block-site-title {
+	font-weight: 600;
+}
+
+.tb-header__grid > .tb-nav {
+	justify-content: flex-end;
+}
+
+.tb-nav .tb-nav-cta > .wp-block-navigation-item__content {
+	font-weight: 600;
+}
+
+.tb-header .wp-block-site-title a:hover {
+	text-decoration: none;
+}
+
+.tb-nav .wp-block-navigation-item__content {
+	padding: 0;
+}
+
+/* .tb-cell setzt flex-direction: column; die Navigation erbt das sonst ueber flex-direction: inherit. */
+.tb-nav .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container {
+	flex-direction: row;
+	gap: 1.5rem;
+}
+
+.tb-nav .current-menu-item > .wp-block-navigation-item__content {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 1px;
+}
+
+.tb-nav .wp-block-navigation__responsive-container.is-menu-open {
+	padding: clamp(1rem, 2.2vw, 2.25rem);
+}
+
+.tb-nav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	padding-top: 3.5rem;
+	align-items: flex-start;
+}
+
+.tb-nav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.tb-nav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+	font-size: var(--wp--preset--font-size--l);
+	letter-spacing: -0.02em;
+}
+
+/* ---------- Footer ---------- */
+
+.tb-footer {
+	padding-top: var(--tb-space);
+	padding-bottom: 1.25rem;
+	color: var(--wp--preset--color--muted);
+}
+
+.tb-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 1.5rem;
+}
+
+/* ---------- Kontaktformular (Contact Form 7) ---------- */
+
+.wpcf7 {
+	margin-block: 1rem 1.5rem !important;
+}
+
+.wpcf7-form p {
+	margin: 0 0 1.25rem;
+}
+
+.wpcf7-form .hidden-fields-container {
+	display: none;
+}
+
+.wpcf7-form p:has(.cf7apps-honeypot-wrap) {
+	margin: 0;
+}
+
+.wpcf7-form label {
+	display: block;
+	color: var(--wp--preset--color--muted);
+}
+
+.wpcf7-form label br {
+	display: none;
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+}
+
+.wpcf7-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+.wpcf7-form select,
+.wpcf7-form textarea {
+	width: 100%;
+	box-sizing: border-box;
+	background: transparent;
+	color: var(--wp--preset--color--contrast);
+	border: 0;
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	border-radius: 0;
+	padding: 0.4rem 0 0.5rem;
+	font: inherit;
+	appearance: none;
+}
+
+.wpcf7-form select {
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23111' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 0.1rem center;
+	padding-right: 1.5rem !important;
+	cursor: pointer;
+}
+
+.wpcf7-form textarea {
+	min-height: 7rem;
+	resize: vertical;
+}
+
+.wpcf7-form input:focus,
+.wpcf7-form select:focus,
+.wpcf7-form textarea:focus {
+	outline: none;
+	border-bottom-color: var(--wp--preset--color--contrast);
+}
+
+.wpcf7-form input[type="submit"] {
+	cursor: pointer;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	color: var(--wp--preset--color--contrast);
+	font: inherit;
+	padding: 0;
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 1px;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+	color: var(--wp--preset--color--muted);
+}
+
+.wpcf7-not-valid-tip {
+	font-size: var(--wp--preset--font-size--xs);
+	margin-top: 0.3rem;
+	display: block;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	margin: 1rem 0 0;
+	padding: 0;
+	border: 0;
+}
+
+.wpcf7 form .wpcf7-response-output:empty {
+	display: none;
+}
+
+.wpcf7-spinner {
+	margin-left: 0.75rem;
+}
+
+/* ---------- Mobil ---------- */
+
+@media (max-width: 781px) {
+	.tb-spread {
+		row-gap: 1.25rem;
+	}
+
+	.tb-main .tb-hero {
+		min-height: 0;
+		padding-top: 3rem;
+		row-gap: 2rem;
+	}
+
+	.tb-hero__name,
+	.tb-hero__media,
+	.tb-hero__links {
+		grid-row: auto;
+	}
+
+	.tb-display {
+		font-size: clamp(2.75rem, 15vw, 5rem) !important;
+	}
+
+	.tb-hero__media {
+		width: 78%;
+		justify-self: end;
+	}
+
+	.tb-aside {
+		width: 60%;
+	}
+
+	.tb-header__grid {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	/* Drei Bilder bleiben nebeneinander, nur kleiner */
+	.tb-tiles .tb-cell {
+		grid-column-end: span 4;
+	}
+
+	.tb-tiles {
+		column-gap: 0.5rem;
+	}
+}

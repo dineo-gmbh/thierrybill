@@ -1,0 +1,9 @@
+<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0V42H42L0 0Z" fill="url(#weekly-summary-accent-grad)"/>
+<defs>
+<linearGradient id="weekly-summary-accent-grad" x1="21" y1="0" x2="21" y2="42" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6B83B3"/>
+<stop offset="1" stop-color="#37486B"/>
+</linearGradient>
+</defs>
+</svg>
