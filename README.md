@@ -125,7 +125,7 @@ Ersteinrichtung (einmalig erledigt am 16.10.2026): lokale Datenbank **ohne** `wp
 ## Vor dem Launch
 
 - Mehr Tattoo-Fotos und echte Grafik-Arbeiten in die Bildfolgen aufnehmen (Grafik zeigt bisher nur das Fotoshooting-Bild)
-- Formular-Empfänger prüfen (aktuell Admin-E-Mail), WP Mail SMTP einrichten
+- Kontaktformular nach dem Nameserver-Wechsel testen: Anfragen gehen an tjb1612@gmail.com (Absender wordpress@thierrybill.ch). Landen sie im Spam, SPF prüfen bzw. WP Mail SMTP mit einem Mittwald-Postfach einrichten
 - Admin-Passwort ändern
 - Suchmaschinen freigeben (Produktion, nach dem Nameserver-Wechsel): `wp option update blog_public 1` (sonst bleibt die Seite `noindex`)
 - Domain: bisher lief die Seite unter `https://thierrybill.ch` (ohne www) – dabei bleiben, damit die 301-Weiterleitungen und bestehende Links greifen

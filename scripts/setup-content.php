@@ -124,7 +124,7 @@ $form->set_properties( [
 		'active'             => true,
 		'subject'            => '[_site_title] [your-topic]: [your-subject]',
 		'sender'             => '[_site_title] <wordpress@' . wp_parse_url( home_url(), PHP_URL_HOST ) . '>',
-		'recipient'          => '[_site_admin_email]',
+		'recipient'          => 'tjb1612@gmail.com', // Anfragen an Thierrys Gmail (wie im Impressum)
 		'body'               => "Von: [your-name] <[your-email]>\nThema: [your-topic]\nBetreff: [your-subject]\n\n[your-message]\n\n-- \nGesendet über das Kontaktformular auf [_site_url]",
 		'additional_headers' => 'Reply-To: [your-name] <[your-email]>',
 		'attachments'        => '',
