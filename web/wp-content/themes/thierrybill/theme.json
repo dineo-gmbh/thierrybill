@@ -64,16 +64,16 @@
 					]
 				},
 				{
-					"slug": "fraktur",
-					"name": "UnifrakturCook",
-					"fontFamily": "UnifrakturCook, 'Old English Text MT', serif",
+					"slug": "display",
+					"name": "Ballet",
+					"fontFamily": "Ballet, 'Snell Roundhand', cursive",
 					"fontFace": [
 						{
-							"fontFamily": "UnifrakturCook",
+							"fontFamily": "Ballet",
 							"fontStyle": "normal",
-							"fontWeight": "700",
+							"fontWeight": "400",
 							"fontDisplay": "swap",
-							"src": [ "file:./assets/fonts/unifrakturcook-latin.woff2" ]
+							"src": [ "file:./assets/fonts/ballet-latin.woff2" ]
 						}
 					]
 				}

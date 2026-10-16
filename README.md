@@ -18,9 +18,9 @@ ddev start
 
 ## Theme
 
-Eigenes Block-Theme unter `web/wp-content/themes/thierrybill/`, schlicht im Stil eines Fotografen-/Art-Director-Portfolios: gebrochenes Weiss (#f5f5f3), schwarz, viel Weissraum, Fotos in Schwarz-Weiss. Grosse Titel in Fraktur, alles andere in Inter.
+Eigenes Block-Theme unter `web/wp-content/themes/thierrybill/`, schlicht im Stil eines Fotografen-/Art-Director-Portfolios: gebrochenes Weiss (#f5f5f3), schwarz, viel Weissraum, Fotos in Schwarz-Weiss. Grosse Titel in der Schreibschrift Ballet, alles andere in Inter.
 
-- `theme.json`: Farben, Schriften **Inter** (Text, Navigation) und **UnifrakturCook** (nur Hero-Titel, Klasse `tb-display`), beide lokal in `assets/fonts/` (keine Verbindung zu Google), Grundschrift 14 px. Fraktur nie in Versalien setzen. Varianten-Vergleich: `docs/schrift-varianten.png`, `docs/schrift-varianten-2.png`
+- `theme.json`: Farben, Schriften **Inter** (Text, Navigation) und **Ballet** (nur Hero-Titel, Familie `display`, Klasse `tb-display`; SIL Open Font License, variable Achse `opsz` 16–72), beide lokal in `assets/fonts/` (keine Verbindung zu Google), Grundschrift 14 px. Varianten-Vergleiche: `docs/schrift-varianten*.png`. Nur Schriften mit Web-Lizenz verwenden (z. B. Aston Script ist nur privat frei)
 - `templates/`: front-page, page-no-title (Seiten aus Patterns), page/single (z. B. Impressum), index, 404
 - `parts/`: header (Name fett links, Navigation rechts, «Kontakt» fett), footer (eine Zeile: © und Links)
 - `patterns/`: page-start, page-musik, page-tattoo, page-grafik, page-kontakt; intern footer-meta, not-found
@@ -90,7 +90,7 @@ Dazu eigene Meta-Beschreibungen (statt automatisch aus dem Seitentext), Beitrags
 - Honeypot-Feld mit `tabindex="-1"` (statt 1000)
 - neue Bilder als **WebP** (rund halb so gross wie JPEG); bestehende Bilder nach Änderungen: `ddev wp media regenerate --yes`
 
-**Theme (Ladezeit):** Schriften Inter und UnifrakturCook (17 KB) vorgeladen; Bildgrösse `tb-600` als Zwischenstufe im srcset; passende `sizes` je Bildtyp; nur das erste Hero-Bild lädt sofort (`fetchpriority="high"`), alle anderen lazy; Grau auf Kontrast 4.9:1 angehoben.
+**Theme (Ladezeit):** Schriften Inter und Ballet (35 KB) vorgeladen; Bildgrösse `tb-600` als Zwischenstufe im srcset; passende `sizes` je Bildtyp; nur das erste Hero-Bild lädt sofort (`fetchpriority="high"`), alle anderen lazy; Grau auf Kontrast 4.9:1 angehoben.
 
 **Sitemap/robots:** `/sitemap.xml` (Start, Musik, Tattoo, Grafik, Kontakt), in `robots.txt` eingetragen. Lokal ist die Seite absichtlich `noindex` (`blog_public` = 0).
 

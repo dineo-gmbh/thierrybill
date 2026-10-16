@@ -348,8 +348,8 @@ add_filter( 'render_block_core/image', static function ( string $html, array $bl
  * Schriften vorladen (verhindert spaetes Umspringen der Schrift).
  */
 add_action( 'wp_head', static function (): void {
-	// Inter (Text) und UnifrakturCook (Hero-Titel, oft das groesste sichtbare Element).
-	foreach ( [ 'inter-latin.woff2', 'unifrakturcook-latin.woff2' ] as $font ) {
+	// Inter (Text) und Ballet (Hero-Titel, oft das groesste sichtbare Element).
+	foreach ( [ 'inter-latin.woff2', 'ballet-latin.woff2' ] as $font ) {
 		printf(
 			'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
 			esc_url( get_theme_file_uri( 'assets/fonts/' . $font ) )

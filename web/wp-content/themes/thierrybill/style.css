@@ -225,17 +225,31 @@ a {
 	gap: 0.6rem;
 }
 
-/* Titel in Fraktur (UnifrakturCook): nur hier, alles andere bleibt Inter. Nie in Versalien. */
+/* Grosse Titel im Hero in der Display-Schrift (Ballet, SIL OFL), alles andere bleibt Inter. */
 .tb-display {
-	font-family: var(--wp--preset--font-family--fraktur) !important;
-	font-size: clamp(3rem, 9vw, 10rem) !important;
-	font-weight: 700 !important;
-	line-height: 1 !important;
+	font-family: var(--wp--preset--font-family--display) !important;
+	font-size: clamp(3.5rem, 12vw, 13rem) !important;
+	font-weight: 400 !important;
+	line-height: 1.1 !important;
+	font-optical-sizing: auto; /* Ballet: opsz-Achse 16–72, gross = feinere Zierlinien */
 	letter-spacing: 0 !important;
 	text-transform: none;
 	margin: 0;
 	font-kerning: normal;
-	font-feature-settings: "liga", "dlig";
+	font-feature-settings: "liga", "calt";
+}
+
+/* Schreibschrift hat lange Unterlaengen: Unterzeile mit Abstand darunter. */
+.tb-hero__name .tb-hero__sub {
+	margin-top: 0.9rem !important;
+}
+
+/* Desktop: Titel einzeilig, damit die Unterzeile rechtsbuendig darunter sitzt. */
+@media (min-width: 782px) {
+	.tb-display {
+		font-size: clamp(4rem, 11.5vw, 13rem) !important;
+		white-space: nowrap;
+	}
 }
 
 /* Kernaussage als H2: gleiche Optik wie der grosse Absatz */
@@ -515,7 +529,7 @@ h2.tb-big {
 	}
 
 	.tb-display {
-		font-size: clamp(2.75rem, 15vw, 5rem) !important;
+		font-size: clamp(3.25rem, 19vw, 6rem) !important;
 	}
 
 	.tb-hero__media {
