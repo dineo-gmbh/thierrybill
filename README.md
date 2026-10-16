@@ -120,15 +120,14 @@ scripts/deploy.sh
 
 Ersteinrichtung (einmalig erledigt am 16.10.2026): lokale Datenbank **ohne** `wp_users`/`wp_usermeta` importiert, `wp search-replace https://thierrybill.ddev.site https://thierrybill.ch --all-tables-with-prefix`, Uploads per rsync. Sicherung des Ausgangszustands in `~/backup/` auf dem Server. Domain `thierrybill.ch` und `www` als Virtual Host in mStudio, verifiziert per TXT-Eintrag (bis zur Umstellung noch in der Hetzner-Zone), SSL-Zertifikat von Let's Encrypt ist ausgestellt.
 
-**Domain/DNS:** registriert bei METANET AG, DNS-Zone bis zum Launch bei Hetzner (`ns1.your-server.de`, alte Seite auf `78.46.130.16`). Launch = bei METANET die Nameserver auf `ns01.agenturserver.de`, `ns01.agenturserver.it`, `ns01.agenturserver.co` (Mittwald) umstellen. Vorher die Seite unter Mittwald testen, z. B. mit `curl --resolve thierrybill.ch:443:185.215.158.240 https://thierrybill.ch/`.
+**Domain/DNS:** registriert bei METANET AG. **Live seit 16.10.2026:** Die DNS-Zone liegt weiterhin bei Hetzner (`ns1.your-server.de`, `ns3.second-ns.de`, `ns.second-ns.com`), dort zeigen A `@` und `www` auf Mittwald (`185.215.158.240`), AAAA entfernt. Suchmaschinen sind auf Produktion freigegeben (`blog_public` = 1). **Achtung:** Solange die Zone bei Hetzner liegt, darf das Hetzner-Hosting nicht gekündigt werden, sonst verschwindet die DNS-Zone und die Seite ist nicht mehr erreichbar. Vorher bei METANET die Nameserver auf Mittwald umstellen (`ns01.agenturserver.de`, `ns01.agenturserver.it`, `ns01.agenturserver.co`) und prüfen, dass Mittwald die Zone mit A-Eintrag führt.
 
-## Vor dem Launch
+## Nach dem Launch (offen)
 
-- Mehr Tattoo-Fotos und echte Grafik-Arbeiten in die Bildfolgen aufnehmen (Grafik zeigt bisher nur das Fotoshooting-Bild)
-- Kontaktformular nach dem Nameserver-Wechsel testen: Anfragen gehen an tjb1612@gmail.com (Absender wordpress@thierrybill.ch). Landen sie im Spam, SPF prüfen bzw. WP Mail SMTP mit einem Mittwald-Postfach einrichten
-- Admin-Passwort ändern
-- Suchmaschinen freigeben (Produktion, nach dem Nameserver-Wechsel): `wp option update blog_public 1` (sonst bleibt die Seite `noindex`)
-- Domain: bisher lief die Seite unter `https://thierrybill.ch` (ohne www) – dabei bleiben, damit die 301-Weiterleitungen und bestehende Links greifen
+- SPF-Eintrag in der Zone anpassen, damit Formular-Mails von Mittwald nicht im Spam landen: `v=spf1 include:agenturserver.de ~all` (wie milanslick) statt `v=spf1 +a +mx ?all`; danach Kontaktformular testen (Empfänger tjb1612@gmail.com). Landen Mails trotzdem im Spam: WP Mail SMTP mit einem Mittwald-Postfach einrichten
+- MX-Eintrag `dedi3600.your-server.de` entfernen (keine Postfächer für die Domain)
 - Google Search Console: Domain bestätigen, `https://thierrybill.ch/sitemap.xml` einreichen
-- Instagram- und Facebook-Profil auf `https://thierrybill.ch` verlinken (stärkt die Verbindung Person ↔ Website)
-- Nach dem Launch: Hetzner-Hosting (Server dedi3600, Account 809q) kündigen und die dort sichtbar gewordenen Passwörter nicht mehr verwenden
+- Instagram- und Facebook-Profil auf `https://thierrybill.ch` verlinken
+- Mehr Tattoo-Fotos und echte Grafik-Arbeiten in die Bildfolgen aufnehmen (Grafik zeigt bisher nur das Fotoshooting-Bild)
+- Admin-Passwort auf Produktion prüfen (Mittwald-Installation)
+- Nameserver bei METANET auf Mittwald umstellen, erst danach das Hetzner-Hosting (Server dedi3600, Account 809q) kündigen; die dort sichtbar gewordenen Passwörter nicht mehr verwenden
