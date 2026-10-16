@@ -146,7 +146,9 @@ WP_CLI::log( "Kontaktformular #$form_id" );
 
 /* ---------- Seiten ---------- */
 
-$legal_placeholder = static fn ( string $title ): string => "<!-- wp:paragraph {\"className\":\"tb-note\"} -->\n<p class=\"tb-note\">[Platzhalter] $title vor dem Launch ergänzen (Name, Adresse, E-Mail; Datenschutz inkl. Kontaktformular, Schriften lokal, keine Tracker).</p>\n<!-- /wp:paragraph -->";
+// Rechtstexte (Impressum, Datenschutz) aus scripts/legal-content.php.
+define( 'TB_SETUP_CONTENT', true );
+require __DIR__ . '/legal-content.php';
 
 $pages = [
 	// slug => [ Titel, Pattern oder null, Template, Menue-Reihenfolge ]
@@ -165,7 +167,7 @@ foreach ( $pages as $slug => [ $title, , $template, $order ] ) {
 }
 $ids = [];
 foreach ( $pages as $slug => [ $title, $pattern_slug, $template, $order ] ) {
-	$content      = $pattern_slug ? $pattern( $pattern_slug ) : $legal_placeholder( $title );
+	$content      = $pattern_slug ? $pattern( $pattern_slug ) : tb_legal_content( $slug );
 	$ids[ $slug ] = $upsert( 'page', $slug, $title, $content, [ 'page_template' => $template, 'menu_order' => $order ] );
 	WP_CLI::log( "Seite $slug (#{$ids[ $slug ]})" );
 }

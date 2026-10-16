@@ -44,7 +44,7 @@ Helfer in `functions.php` für die Patterns: `tb_hero()`, `tb_spread()`, `tb_cel
 | Tattoo | `/tattoo/` | Hero mit Tattoo-Fotos, Über, Anfrage |
 | Grafik | `/grafik/` | Hero mit Foto, Über, Details |
 | Kontakt | `/kontakt/` | Hero ohne Bild, Formular (Thema: Musik/Booking, Studio, Tattoo, Grafik, Anderes), Instagram, Facebook |
-| Impressum, Datenschutz | | Platzhalter |
+| Impressum, Datenschutz | `/impressum/`, `/datenschutz/` | Rechtstexte aus `scripts/legal-content.php` (Schweizer DSG, soweit anwendbar DSGVO) |
 
 Texte sind gegenüber der bisherigen Seite gestrafft, inhaltlich unverändert.
 
@@ -98,6 +98,16 @@ Dazu eigene Meta-Beschreibungen (statt automatisch aus dem Seitentext), Beitrags
 
 Contact Form 7, Flamingo (Anfragen-Archiv), CF7 Apps Honeypot, The SEO Framework, Limit Login Attempts Reloaded.
 
+## Rechtstexte
+
+Impressum und Datenschutz stehen in `scripts/legal-content.php` (Verantwortlich: Thierry Bill, Zielebachweg 1, 3428 Wiler, tjb1612@gmail.com). Die Datenschutzerklärung beschreibt, was die Seite tatsächlich tut: Hosting bei Mittwald (Deutschland), Server-Logs, Kontaktformular mit Archiv (Flamingo) und Honeypot, E-Mail an Gmail (Google), keine Cookies, kein Tracking, Schriften lokal, Links zu Instagram/Facebook, Login-Schutz. Bei Änderungen an der Seite (z. B. Analyse-Tool, eingebettete Videos) den Text anpassen.
+
+```bash
+ddev wp eval-file scripts/legal-content.php   # lokal, nur die zwei Rechtsseiten
+```
+
+Produktion: Datei hochladen und auf dem Server `wp eval-file` ausführen (siehe Deployment).
+
 ## Deployment (Mittwald)
 
 Produktion: https://thierrybill.ch, Mittwald-Projekt «thierrybill», App «thierrybill-wp» (`a-es3wr7`), Projekt-User `p-b6amzs`, Pfad `/home/p-b6amzs/html/thierrybill-wp` (WordPress direkt im Ordner, nicht in `web/`). SSH: `ssh-qsz9am@a-es3wr7@ssh.isenstedt.project.host` mit `~/.ssh/id_ed25519`. Mittwald-IP: `185.215.158.240`.
@@ -115,7 +125,6 @@ Ersteinrichtung (einmalig erledigt am 16.10.2026): lokale Datenbank **ohne** `wp
 ## Vor dem Launch
 
 - Mehr Tattoo-Fotos und echte Grafik-Arbeiten in die Bildfolgen aufnehmen (Grafik zeigt bisher nur das Fotoshooting-Bild)
-- Impressum und Datenschutz ausfüllen
 - Formular-Empfänger prüfen (aktuell Admin-E-Mail), WP Mail SMTP einrichten
 - Admin-Passwort ändern
 - Suchmaschinen freigeben (Produktion, nach dem Nameserver-Wechsel): `wp option update blog_public 1` (sonst bleibt die Seite `noindex`)
