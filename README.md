@@ -98,14 +98,28 @@ Dazu eigene Meta-Beschreibungen (statt automatisch aus dem Seitentext), Beitrags
 
 Contact Form 7, Flamingo (Anfragen-Archiv), CF7 Apps Honeypot, The SEO Framework, Limit Login Attempts Reloaded.
 
+## Deployment (Mittwald)
+
+Produktion: https://thierrybill.ch, Mittwald-Projekt «thierrybill», App «thierrybill-wp» (`a-es3wr7`), Projekt-User `p-b6amzs`, Pfad `/home/p-b6amzs/html/thierrybill-wp` (WordPress direkt im Ordner, nicht in `web/`). SSH: `ssh-qsz9am@a-es3wr7@ssh.isenstedt.project.host` mit `~/.ssh/id_ed25519`. Mittwald-IP: `185.215.158.240`.
+
+```bash
+scripts/deploy.sh
+```
+
+Überträgt alle im Git erfassten Dateien unter `web/` (ohne `wp-config.php`, `.htaccess`) per rsync und leert danach Cache und Rewrite-Regeln über WP-CLI. Datenbank und Uploads werden nicht deployt; Inhalte werden in Produktion gepflegt.
+
+Ersteinrichtung (einmalig erledigt am 16.10.2026): lokale Datenbank **ohne** `wp_users`/`wp_usermeta` importiert, `wp search-replace https://thierrybill.ddev.site https://thierrybill.ch --all-tables-with-prefix`, Uploads per rsync. Sicherung des Ausgangszustands in `~/backup/` auf dem Server. Domain `thierrybill.ch` und `www` als Virtual Host in mStudio, verifiziert per TXT-Eintrag (bis zur Umstellung noch in der Hetzner-Zone), SSL-Zertifikat von Let's Encrypt ist ausgestellt.
+
+**Domain/DNS:** registriert bei METANET AG, DNS-Zone bis zum Launch bei Hetzner (`ns1.your-server.de`, alte Seite auf `78.46.130.16`). Launch = bei METANET die Nameserver auf `ns01.agenturserver.de`, `ns01.agenturserver.it`, `ns01.agenturserver.co` (Mittwald) umstellen. Vorher die Seite unter Mittwald testen, z. B. mit `curl --resolve thierrybill.ch:443:185.215.158.240 https://thierrybill.ch/`.
+
 ## Vor dem Launch
 
 - Mehr Tattoo-Fotos und echte Grafik-Arbeiten in die Bildfolgen aufnehmen (Grafik zeigt bisher nur das Fotoshooting-Bild)
 - Impressum und Datenschutz ausfüllen
 - Formular-Empfänger prüfen (aktuell Admin-E-Mail), WP Mail SMTP einrichten
 - Admin-Passwort ändern
-- `blog_public` auf 1 setzen: `ddev wp option update blog_public 1` (sonst bleibt die Seite `noindex`)
+- Suchmaschinen freigeben (Produktion, nach dem Nameserver-Wechsel): `wp option update blog_public 1` (sonst bleibt die Seite `noindex`)
 - Domain: bisher lief die Seite unter `https://thierrybill.ch` (ohne www) – dabei bleiben, damit die 301-Weiterleitungen und bestehende Links greifen
 - Google Search Console: Domain bestätigen, `https://thierrybill.ch/sitemap.xml` einreichen
 - Instagram- und Facebook-Profil auf `https://thierrybill.ch` verlinken (stärkt die Verbindung Person ↔ Website)
-- Suchen/Ersetzen beim Umzug: `wp search-replace https://thierrybill.ddev.site https://thierrybill.ch`
+- Nach dem Launch: Hetzner-Hosting (Server dedi3600, Account 809q) kündigen und die dort sichtbar gewordenen Passwörter nicht mehr verwenden
