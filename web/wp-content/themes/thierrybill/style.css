@@ -225,26 +225,17 @@ a {
 	gap: 0.6rem;
 }
 
+/* Titel in Fraktur (UnifrakturCook): nur hier, alles andere bleibt Inter. Nie in Versalien. */
 .tb-display {
-	font-size: clamp(3rem, 9.2vw, 10.5rem) !important;
-	font-weight: 500 !important;
-	line-height: 0.92 !important;
-	letter-spacing: -0.055em !important;
+	font-family: var(--wp--preset--font-family--fraktur) !important;
+	font-size: clamp(3rem, 9vw, 10rem) !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	letter-spacing: 0 !important;
+	text-transform: none;
 	margin: 0;
-	margin-left: -0.05em !important;
-}
-
-.tb-display--mark::after {
-	content: "©";
-	display: inline-block;
-
-	font-size: 0.22em;
-	font-weight: 400;
-	letter-spacing: 0;
-	vertical-align: top;
-	position: relative;
-	top: 0.35em;
-	margin-left: 0.15em;
+	font-kerning: normal;
+	font-feature-settings: "liga", "dlig";
 }
 
 /* Kernaussage als H2: gleiche Optik wie der grosse Absatz */

@@ -18,16 +18,16 @@ ddev start
 
 ## Theme
 
-Eigenes Block-Theme unter `web/wp-content/themes/thierrybill/`, schlicht im Stil eines Fotografen-/Art-Director-Portfolios: gebrochenes Weiss (#f5f5f3), schwarz, eine Schrift, viel Weissraum, Fotos in Schwarz-Weiss.
+Eigenes Block-Theme unter `web/wp-content/themes/thierrybill/`, schlicht im Stil eines Fotografen-/Art-Director-Portfolios: gebrochenes Weiss (#f5f5f3), schwarz, viel Weissraum, Fotos in Schwarz-Weiss. Grosse Titel in Fraktur, alles andere in Inter.
 
-- `theme.json`: Farben, Schrift **Inter** (lokal in `assets/fonts/`, keine Verbindung zu Google), Grundschrift 14 px
+- `theme.json`: Farben, Schriften **Inter** (Text, Navigation) und **UnifrakturCook** (nur Hero-Titel, Klasse `tb-display`), beide lokal in `assets/fonts/` (keine Verbindung zu Google), Grundschrift 14 px. Fraktur nie in Versalien setzen. Varianten-Vergleich: `docs/schrift-varianten.png`, `docs/schrift-varianten-2.png`
 - `templates/`: front-page, page-no-title (Seiten aus Patterns), page/single (z. B. Impressum), index, 404
 - `parts/`: header (Name fett links, Navigation rechts, «Kontakt» fett), footer (eine Zeile: © und Links)
 - `patterns/`: page-start, page-musik, page-tattoo, page-grafik, page-kontakt; intern footer-meta, not-found
 - `style.css`: Hero, Raster, Typografie, Bildfolge, Formular
 - `assets/js/thierrybill.js`: Bildfolge im Hero (Klick = nächstes Bild, sonst alle 4 s; nicht bei `prefers-reduced-motion`; ohne JS bleibt das erste Bild)
 
-**Hero (`tb_hero()`):** Jede Seite beginnt mit einem sehr grossen Titel (Startseite: «Thierry Bill©»), darunter rechtsbündig eine kleine Unterzeile («Musiker + Tattoo-Artist + Grafikdesigner»). Rechts eine Bildfolge mit Zähler «01/05», auf der Startseite unten links Pfeil-Links (Musik ↘ Tattoo ↘ Grafik ↘). Startseite bildschirmhoch, Unterseiten etwas niedriger, Kontakt ohne Bild.
+**Hero (`tb_hero()`):** Jede Seite beginnt mit einem sehr grossen Titel (Startseite: «Thierry Bill»), darunter rechtsbündig eine kleine Unterzeile («Musiker + Tattoo-Artist + Grafikdesigner»). Rechts eine Bildfolge mit Zähler «01/05», auf der Startseite unten links Pfeil-Links (Musik ↘ Tattoo ↘ Grafik ↘). Startseite bildschirmhoch, Unterseiten etwas niedriger, Kontakt ohne Bild.
 
 **Danach je Unterseite:** «Über» (Aussage + Text, Spalte 5–10), dann «Details» als Liste Begriff / Wert.
 
@@ -39,7 +39,7 @@ Helfer in `functions.php` für die Patterns: `tb_hero()`, `tb_spread()`, `tb_cel
 
 | Seite | Slug | Inhalt |
 |---|---|---|
-| Start | `/` | Hero «Thierry Bill©» mit Bildfolge (6 Fotos), drei Bereiche mit Foto, Über mich |
+| Start | `/` | Hero «Thierry Bill» mit Bildfolge (6 Fotos), drei Bereiche mit Foto, Über mich |
 | Musik | `/musik/` | Hero mit 3 Live-Fotos, Über, Details (Band, Studium, Studio, Bühnen) |
 | Tattoo | `/tattoo/` | Hero mit Tattoo-Fotos, Über, Anfrage |
 | Grafik | `/grafik/` | Hero mit Foto, Über, Details |
@@ -77,7 +77,7 @@ Ziel: jede Seite eindeutig beschrieben, sauber gegliedert, schnell. Lighthouse (
 
 Dazu eigene Meta-Beschreibungen (statt automatisch aus dem Seitentext), Beitragsbild = og:image (als JPEG-Original, weil WhatsApp WebP-Vorschauen nicht zuverlässig zeigt). Impressum und Datenschutz: `noindex`, nicht in der Sitemap.
 
-**Gliederung:** genau ein H1 pro Seite (Hero-Titel, «©» nur per CSS), Kernaussage als H2 (z. B. «Individuelle Tattoos nach eigenen Entwürfen.»), «Tattoo anfragen» und «Details» als H2, reine Beschriftungen («Über») ohne Überschrift. Alle Bilder mit Alt-Text.
+**Gliederung:** genau ein H1 pro Seite (Hero-Titel), Kernaussage als H2 (z. B. «Individuelle Tattoos nach eigenen Entwürfen.»), «Tattoo anfragen» und «Details» als H2, reine Beschriftungen («Über») ohne Überschrift. Alle Bilder mit Alt-Text.
 
 **Strukturierte Daten:** Person «Thierry Bill» mit Instagram/Facebook (sameAs), Porträt, Berufen, Band Cold Touch, Swiss Jazz School Bern (alumniOf), HSLU (affiliation, laufendes Studium), Fachgebiete. Die von The SEO Framework fälschlich zusätzlich ausgegebene «Organization» wird durch die Person ersetzt (eine Entität statt zwei).
 
@@ -90,7 +90,7 @@ Dazu eigene Meta-Beschreibungen (statt automatisch aus dem Seitentext), Beitrags
 - Honeypot-Feld mit `tabindex="-1"` (statt 1000)
 - neue Bilder als **WebP** (rund halb so gross wie JPEG); bestehende Bilder nach Änderungen: `ddev wp media regenerate --yes`
 
-**Theme (Ladezeit):** Schrift Inter vorgeladen; Bildgrösse `tb-600` als Zwischenstufe im srcset; passende `sizes` je Bildtyp; nur das erste Hero-Bild lädt sofort (`fetchpriority="high"`), alle anderen lazy; Grau auf Kontrast 4.9:1 angehoben.
+**Theme (Ladezeit):** Schriften Inter und UnifrakturCook (17 KB) vorgeladen; Bildgrösse `tb-600` als Zwischenstufe im srcset; passende `sizes` je Bildtyp; nur das erste Hero-Bild lädt sofort (`fetchpriority="high"`), alle anderen lazy; Grau auf Kontrast 4.9:1 angehoben.
 
 **Sitemap/robots:** `/sitemap.xml` (Start, Musik, Tattoo, Grafik, Kontakt), in `robots.txt` eingetragen. Lokal ist die Seite absichtlich `noindex` (`blog_public` = 0).
 

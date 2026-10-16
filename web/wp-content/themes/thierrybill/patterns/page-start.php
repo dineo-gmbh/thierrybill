@@ -14,8 +14,7 @@ echo tb_hero(
 		[ 'Musik', tb_page_url( 'musik' ) ],
 		[ 'Tattoo', tb_page_url( 'tattoo' ) ],
 		[ 'Grafik', tb_page_url( 'grafik' ) ],
-	],
-	true
+	]
 );
 
 echo tb_spread(

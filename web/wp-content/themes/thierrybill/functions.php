@@ -5,7 +5,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'THIERRYBILL_VERSION', '4.1.0' );
+define( 'THIERRYBILL_VERSION', '4.2.1' );
 
 /**
  * Theme-Setup.
@@ -278,14 +278,10 @@ function tb_placeholder( string $label, string $ratio = 'tb-r-45' ): string {
  * @param string   $subtitle Unterzeile, z. B. «Musiker + Tattoo-Artist + Grafikdesigner».
  * @param string[] $images   Bild-Schluessel (siehe tb_img_id()).
  * @param array    $links    [ [ Text, URL ], … ].
- * @param bool     $mark     «©» hinter dem Titel.
  */
-function tb_hero( string $title, string $subtitle, array $images = [], array $links = [], bool $mark = false ): string {
-	// Das «©» setzt CSS (::after), damit der H1-Text sauber «Thierry Bill» bleibt.
-	$class   = $mark ? 'tb-display tb-display--mark' : 'tb-display';
+function tb_hero( string $title, string $subtitle, array $images = [], array $links = [] ): string {
 	$heading = sprintf(
-		"<!-- wp:heading {\"level\":1,\"className\":\"%1\$s\"} -->\n<h1 class=\"wp-block-heading %1\$s\">%2\$s</h1>\n<!-- /wp:heading -->\n",
-		$class,
+		"<!-- wp:heading {\"level\":1,\"className\":\"tb-display\"} -->\n<h1 class=\"wp-block-heading tb-display\">%s</h1>\n<!-- /wp:heading -->\n",
 		esc_html( $title )
 	);
 	$inner = tb_cell( 'tb-at-1 tb-w-8 tb-hero__name', $heading . tb_p( esc_html( $subtitle ), 'tb-hero__sub' ) );
@@ -349,11 +345,14 @@ add_filter( 'render_block_core/image', static function ( string $html, array $bl
 }, 10, 2 );
 
 /**
- * Hauptschrift vorladen (verhindert spaetes Umspringen der Schrift).
+ * Schriften vorladen (verhindert spaetes Umspringen der Schrift).
  */
 add_action( 'wp_head', static function (): void {
-	printf(
-		'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
-		esc_url( get_theme_file_uri( 'assets/fonts/inter-latin.woff2' ) )
-	);
+	// Inter (Text) und UnifrakturCook (Hero-Titel, oft das groesste sichtbare Element).
+	foreach ( [ 'inter-latin.woff2', 'unifrakturcook-latin.woff2' ] as $font ) {
+		printf(
+			'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+			esc_url( get_theme_file_uri( 'assets/fonts/' . $font ) )
+		);
+	}
 }, 1 );
