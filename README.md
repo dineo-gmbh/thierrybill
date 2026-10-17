@@ -42,7 +42,7 @@ Helfer in `functions.php` für die Patterns: `tb_hero()`, `tb_spread()`, `tb_cel
 | Start | `/` | Hero «Thierry Bill» mit Bildfolge (6 Fotos), drei Bereiche mit Foto, Über mich |
 | Musik | `/musik/` | Hero mit 5 Fotos (live und Band), Über, Details (Band, Studium, Studio, Bühnen) |
 | Tattoo | `/tattoo/` | Hero mit Tattoo-Fotos, Über, Anfrage |
-| Grafik | `/grafik/` | Hero mit 2 Fotos, Über, Details |
+| Grafik | `/grafik/` | Hero mit Foto (Porträt an der Brücke), Über, Details |
 | Kontakt | `/kontakt/` | Hero ohne Bild, Formular (Thema: Musik/Booking, Studio, Tattoo, Grafik, Anderes), Instagram, Facebook |
 | Impressum, Datenschutz | `/impressum/`, `/datenschutz/` | Rechtstexte aus `scripts/legal-content.php` (Schweizer DSG, soweit anwendbar DSGVO) |
 
@@ -81,7 +81,7 @@ Ziel: jede Seite eindeutig beschrieben, sauber gegliedert, schnell. Lighthouse (
 | Start | Thierry Bill – Musiker, Tattoo-Artist & Grafikdesigner | Porträt |
 | Musik | Musik – Jazz-Gitarrist Thierry Bill | Live (gestreiftes Hemd) |
 | Tattoo | Tattoo – Custom Tattoos & Linework von Thierry Bill | Tattoo-Foto |
-| Grafik | Grafikdesign – Thierry Bill, Mediamatiker EFZ | Fotoshooting |
+| Grafik | Grafikdesign – Thierry Bill, Mediamatiker EFZ | Porträt an der Brücke |
 | Kontakt | Kontakt – Thierry Bill | Porträt |
 
 Dazu eigene Meta-Beschreibungen (statt automatisch aus dem Seitentext), Beitragsbild = og:image (als JPEG-Original, weil WhatsApp WebP-Vorschauen nicht zuverlässig zeigt). Impressum und Datenschutz: `noindex`, nicht in der Sitemap.

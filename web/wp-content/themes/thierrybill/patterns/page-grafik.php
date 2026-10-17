@@ -6,7 +6,7 @@
  * Description: Seite Grafik: Hero mit Bildfolge (Arbeiten), Text, Details.
  */
 
-echo tb_hero( 'Grafik', 'Design + Web + Fotografie', [ 'portrait-bewegung', 'portrait-duo' ] );
+echo tb_hero( 'Grafik', 'Design + Web + Fotografie', [ 'portrait-bewegung' ] );
 
 echo tb_spread(
 	tb_cell( 'tb-at-1 tb-w-4', tb_title( 'Über', 0 ) )

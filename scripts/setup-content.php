@@ -186,7 +186,7 @@ $seo = [
 	'grafik'      => [
 		'title'       => 'Grafikdesign – Thierry Bill, Mediamatiker EFZ',
 		'description' => 'Grafikdesign, Webdesign, E-Commerce, Fotografie und Layout: Thierry Bill (Mediamatiker EFZ) setzt visuelle Konzepte klar, funktional und ästhetisch um.',
-		'image'       => 'portrait-duo',
+		'image'       => 'portrait-bewegung',
 	],
 	'kontakt'     => [
 		'title'       => 'Kontakt – Thierry Bill',
