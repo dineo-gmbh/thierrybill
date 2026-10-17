@@ -3,7 +3,7 @@ Theme Name: Thierry Bill
 Theme URI: https://thierrybill.ch
 Author: Thierry Bill
 Description: Block-Theme für Thierry Bill – Musiker, Tattoo-Artist, Grafikdesigner. Schlichtes Portfolio: gebrochenes Weiss, schwarz, eine Schrift (Inter, lokal), grosser Titel als Hero, 12-Spalten-Raster, Fotos in Schwarz-Weiss.
-Version: 4.3.0
+Version: 4.3.1
 Requires at least: 6.6
 Requires PHP: 8.1
 License: GNU General Public License v2 or later
@@ -258,7 +258,7 @@ a {
 /* Desktop: Titel einzeilig und sehr gross; laeuft hinter dem Foto durch und ueber den Rand. */
 @media (min-width: 782px) {
 	.tb-display {
-		font-size: clamp(5rem, 16.5vw, 20rem) !important;
+		font-size: clamp(5rem, 13.5vw, 17rem) !important;
 		line-height: 0.95 !important;
 		white-space: nowrap;
 		margin-left: -0.05em !important;
