@@ -29,6 +29,8 @@ $tb_images = [
 	'tattoo-schulter'    => [ 'Tattoo von Thierry Bill, Schulter', 'Linework-Tattoo von Thierry Bill an der Schulter: wolkenartige Formen aus feinen Strichen und Punkten' ],
 	'tattoo-schulter-seite' => [ 'Tattoo von Thierry Bill, Schulter seitlich', 'Schulter-Tattoo von Thierry Bill aus feinen Strichen, seitlich fotografiert im Garten' ],
 	'tattoo-oberschenkel-gross' => [ 'Tattoo von Thierry Bill, Oberschenkel gross', 'Grosses Linework-Tattoo von Thierry Bill: verästelte Ornamente vom Oberschenkel bis zum Knie' ],
+	'live-buehne-publikum' => [ 'Thierry Bill live mit Band vor Publikum', 'Schwarz-Weiss-Foto: Thierry Bill an der Gitarre auf einer grossen Bühne mit Band, im Scheinwerferlicht vor vollem Publikum' ],
+	'live-fisheye'       => [ 'Thierry Bill live, Fischauge', 'Thierry Bill spielt E-Gitarre auf der Bühne vor einem Lametta-Vorhang, aufgenommen mit Fischaugen-Objektiv' ],
 ];
 
 require_once ABSPATH . 'wp-admin/includes/media.php';
