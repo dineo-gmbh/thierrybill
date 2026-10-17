@@ -6,7 +6,7 @@
  * Description: Seite Musik: Text, Fotos, Details.
  */
 
-echo tb_hero( 'Musik', 'Gitarre + Songwriting + Studio', [ 'live-pink', 'live-rot', 'live-blau' ] );
+echo tb_hero( 'Musik', 'Gitarre + Songwriting + Studio', [ 'live-streifen', 'band-bruecke', 'live-scheune', 'live-pink', 'live-rot', 'live-blau' ] );
 
 echo tb_spread(
 	tb_cell( 'tb-at-1 tb-w-4', tb_title( 'Über', 0 ) )

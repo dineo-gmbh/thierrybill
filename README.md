@@ -39,8 +39,8 @@ Helfer in `functions.php` für die Patterns: `tb_hero()`, `tb_spread()`, `tb_cel
 
 | Seite | Slug | Inhalt |
 |---|---|---|
-| Start | `/` | Hero «Thierry Bill» mit Bildfolge (6 Fotos), drei Bereiche mit Foto, Über mich |
-| Musik | `/musik/` | Hero mit 3 Live-Fotos, Über, Details (Band, Studium, Studio, Bühnen) |
+| Start | `/` | Hero «Thierry Bill» mit Bildfolge (7 Fotos), drei Bereiche mit Foto, Über mich |
+| Musik | `/musik/` | Hero mit 6 Fotos (live und Band), Über, Details (Band, Studium, Studio, Bühnen) |
 | Tattoo | `/tattoo/` | Hero mit Tattoo-Fotos, Über, Anfrage |
 | Grafik | `/grafik/` | Hero mit Foto, Über, Details |
 | Kontakt | `/kontakt/` | Hero ohne Bild, Formular (Thema: Musik/Booking, Studio, Tattoo, Grafik, Anderes), Instagram, Facebook |
@@ -50,7 +50,16 @@ Texte sind gegenüber der bisherigen Seite gestrafft, inhaltlich unverändert.
 
 ## Bilder
 
-Quelldateien in `scripts/data/img/` (von der bisherigen Seite): `live-rot`, `live-blau`, `live-pink`, `portrait`, `portrait-duo`, dazu `tattoo-1` (Tattoo-Foto). Neues Bild: Datei dort ablegen, in `$images` im Setup-Skript eintragen (Schlüssel = Dateiname ohne .jpg, Titel, Alt-Text) und im Pattern in die Bildliste von `tb_hero()` aufnehmen, z. B. Tattoo: `[ 'tattoo-1', 'tattoo-2' ]`. Der Zähler passt sich an. Das Setup-Skript lädt sie einmalig in die Mediathek (Meta `_tb_key`, mit Alt-Texten). Weitere Bilder einfach im Editor hinzufügen.
+Quelldateien in `scripts/data/img/`, Liste mit Titel und Alt-Text in `scripts/import-images.php` (Schlüssel = Dateiname ohne .jpg). Das Skript lädt jedes Bild einmalig in die Mediathek (Meta `_tb_key`), vorhandene werden übersprungen. Eingesetzt werden die Bilder in den Patterns über den Schlüssel, z. B. in der Bildliste von `tb_hero()`; der Zähler passt sich an. Alle Fotos werden per CSS schwarz-weiss angezeigt, im Hero als 4:5 zugeschnitten (Mitte).
+
+Neues Bild: Datei nach `scripts/data/img/` legen, in `$tb_images` eintragen, im Pattern verwenden, dann
+
+```bash
+ddev wp eval-file scripts/import-images.php
+ddev wp eval-file scripts/render-pages.php start musik   # betroffene Seiten
+```
+
+Produktion: `import-images.php`, `render-pages.php` und `data/img/` hochladen, dieselben zwei Befehle mit `wp` statt `ddev wp` ausführen.
 
 ## Inhalte einrichten
 

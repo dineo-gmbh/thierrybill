@@ -5,7 +5,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'THIERRYBILL_VERSION', '4.3.1' );
+define( 'THIERRYBILL_VERSION', '4.3.2' );
 
 /**
  * Theme-Setup.

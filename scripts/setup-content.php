@@ -67,34 +67,7 @@ $upsert = static function ( string $type, string $slug, string $title, ?string $
 
 /* ---------- Bilder (scripts/data/img → Mediathek, Meta _tb_key) ---------- */
 
-$images = [
-	'live-rot'     => [ 'Thierry Bill live, rotes Licht', 'Thierry Bill mit Gitarre auf der Bühne, in rotes Licht getaucht' ],
-	'live-blau'    => [ 'Thierry Bill live, blaues Licht', 'Thierry Bill an der E-Gitarre mit Band auf einer Kellerbühne' ],
-	'live-pink'    => [ 'Thierry Bill live, pinkes Licht', 'Thierry Bill spielt Gitarre im pinken Scheinwerferlicht' ],
-	'portrait'     => [ 'Thierry Bill, Porträt', 'Schwarz-Weiss-Porträt von Thierry Bill im dunklen Mantel' ],
-	'portrait-duo' => [ 'Thierry Bill, Fotoshooting', 'Schwarz-Weiss-Foto: Thierry Bill im Mantel neben einem Freund vor einer Hausfassade' ],
-	'tattoo-1'     => [ 'Tattoo von Thierry Bill, Knie', 'Feines Linework-Tattoo von Thierry Bill: organische, verästelte Ornamente über Oberschenkel und Knie' ],
-];
-
-require_once ABSPATH . 'wp-admin/includes/media.php';
-require_once ABSPATH . 'wp-admin/includes/file.php';
-require_once ABSPATH . 'wp-admin/includes/image.php';
-
-foreach ( $images as $key => [ $title, $alt ] ) {
-	if ( tb_img_id( $key ) ) {
-		continue;
-	}
-	$source = __DIR__ . "/data/img/$key.jpg";
-	$tmp    = wp_tempnam( $key );
-	copy( $source, $tmp );
-	$id = media_handle_sideload( [ 'name' => "thierry-bill-$key.jpg", 'tmp_name' => $tmp ], 0, $title );
-	if ( is_wp_error( $id ) ) {
-		WP_CLI::error( "Bild $key: " . $id->get_error_message() );
-	}
-	update_post_meta( $id, '_tb_key', $key );
-	update_post_meta( $id, '_wp_attachment_image_alt', $alt );
-	WP_CLI::log( "Bild geladen: $key (#$id)" );
-}
+require __DIR__ . '/import-images.php';
 
 /* ---------- Kontaktformular (Contact Form 7) ---------- */
 
