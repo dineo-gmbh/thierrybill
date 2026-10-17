@@ -39,8 +39,8 @@ Helfer in `functions.php` für die Patterns: `tb_hero()`, `tb_spread()`, `tb_cel
 
 | Seite | Slug | Inhalt |
 |---|---|---|
-| Start | `/` | Hero «Thierry Bill» mit Bildfolge (7 Fotos), drei Bereiche mit Foto, Über mich |
-| Musik | `/musik/` | Hero mit 6 Fotos (live und Band), Über, Details (Band, Studium, Studio, Bühnen) |
+| Start | `/` | Hero «Thierry Bill» mit Bildfolge (6 Fotos), drei Bereiche mit Foto, Über mich |
+| Musik | `/musik/` | Hero mit 5 Fotos (live und Band), Über, Details (Band, Studium, Studio, Bühnen) |
 | Tattoo | `/tattoo/` | Hero mit Tattoo-Fotos, Über, Anfrage |
 | Grafik | `/grafik/` | Hero mit Foto, Über, Details |
 | Kontakt | `/kontakt/` | Hero ohne Bild, Formular (Thema: Musik/Booking, Studio, Tattoo, Grafik, Anderes), Instagram, Facebook |
@@ -79,7 +79,7 @@ Ziel: jede Seite eindeutig beschrieben, sauber gegliedert, schnell. Lighthouse (
 | Seite | Title | Social-Bild |
 |---|---|---|
 | Start | Thierry Bill – Musiker, Tattoo-Artist & Grafikdesigner | Porträt |
-| Musik | Musik – Jazz-Gitarrist Thierry Bill | Live (pink) |
+| Musik | Musik – Jazz-Gitarrist Thierry Bill | Live (gestreiftes Hemd) |
 | Tattoo | Tattoo – Custom Tattoos & Linework von Thierry Bill | Tattoo-Foto |
 | Grafik | Grafikdesign – Thierry Bill, Mediamatiker EFZ | Fotoshooting |
 | Kontakt | Kontakt – Thierry Bill | Porträt |

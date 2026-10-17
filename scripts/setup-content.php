@@ -176,7 +176,7 @@ $seo = [
 	'musik'       => [
 		'title'       => 'Musik – Jazz-Gitarrist Thierry Bill',
 		'description' => 'Thierry Bill ist Jazz-Gitarrist (Bachelor HSLU Luzern) und Lead-Gitarrist von Cold Touch aus Biel. Live u. a. im Gaskessel Bern, Bierhübeli und Mühle Hunziken.',
-		'image'       => 'live-pink',
+		'image'       => 'live-streifen',
 	],
 	'tattoo'      => [
 		'title'       => 'Tattoo – Custom Tattoos & Linework von Thierry Bill',

@@ -14,7 +14,6 @@ defined( 'ABSPATH' ) || exit;
 $tb_images = [
 	'live-rot'           => [ 'Thierry Bill live, rotes Licht', 'Thierry Bill mit Gitarre auf der Bühne, in rotes Licht getaucht' ],
 	'live-blau'          => [ 'Thierry Bill live, blaues Licht', 'Thierry Bill an der E-Gitarre mit Band auf einer Kellerbühne' ],
-	'live-pink'          => [ 'Thierry Bill live, pinkes Licht', 'Thierry Bill spielt Gitarre im pinken Scheinwerferlicht' ],
 	'portrait'           => [ 'Thierry Bill, Porträt', 'Schwarz-Weiss-Porträt von Thierry Bill im dunklen Mantel' ],
 	'portrait-duo'       => [ 'Thierry Bill, Fotoshooting', 'Schwarz-Weiss-Foto: Thierry Bill im Mantel neben einem Freund vor einer Hausfassade' ],
 	'tattoo-1'           => [ 'Tattoo von Thierry Bill, Knie', 'Feines Linework-Tattoo von Thierry Bill: organische, verästelte Ornamente über Oberschenkel und Knie' ],

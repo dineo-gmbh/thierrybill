@@ -9,7 +9,7 @@
 echo tb_hero(
 	'Thierry Bill',
 	'Musiker + Tattoo-Artist + Grafikdesigner',
-	[ 'portrait-bewegung', 'live-streifen', 'tattoo-1', 'villa-graffiti', 'band-bruecke', 'portrait', 'live-pink' ],
+	[ 'portrait-bewegung', 'live-streifen', 'tattoo-1', 'villa-graffiti', 'band-bruecke', 'portrait' ],
 	[
 		[ 'Musik', tb_page_url( 'musik' ) ],
 		[ 'Tattoo', tb_page_url( 'tattoo' ) ],
