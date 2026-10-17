@@ -26,6 +26,9 @@ $tb_images = [
 	'tattoo-knie-detail' => [ 'Tattoo von Thierry Bill, Knie Detail', 'Nahaufnahme eines Linework-Tattoos von Thierry Bill: verästelte Schlaufen mit feinen Strahlen über dem Knie' ],
 	'tattoo-knie-oben'   => [ 'Tattoo von Thierry Bill, Knie von oben', 'Linework-Tattoos von Thierry Bill auf beiden Knien, von oben fotografiert' ],
 	'tattoo-oberschenkel' => [ 'Tattoo von Thierry Bill, Oberschenkel', 'Nahaufnahme eines verheilten Linework-Tattoos von Thierry Bill auf dem Oberschenkel: Kreise und verästelte Linien' ],
+	'tattoo-schulter'    => [ 'Tattoo von Thierry Bill, Schulter', 'Linework-Tattoo von Thierry Bill an der Schulter: wolkenartige Formen aus feinen Strichen und Punkten' ],
+	'tattoo-schulter-seite' => [ 'Tattoo von Thierry Bill, Schulter seitlich', 'Schulter-Tattoo von Thierry Bill aus feinen Strichen, seitlich fotografiert im Garten' ],
+	'tattoo-oberschenkel-gross' => [ 'Tattoo von Thierry Bill, Oberschenkel gross', 'Grosses Linework-Tattoo von Thierry Bill: verästelte Ornamente vom Oberschenkel bis zum Knie' ],
 ];
 
 require_once ABSPATH . 'wp-admin/includes/media.php';
