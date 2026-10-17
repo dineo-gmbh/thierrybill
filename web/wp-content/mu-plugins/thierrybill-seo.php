@@ -198,3 +198,116 @@ add_filter( 'the_seo_framework_generated_image_details', $tb_seo_jpeg_images );
 add_filter( 'wpcf7_form_elements', static function ( string $html ): string {
 	return preg_replace( '/(?<=\s)tabindex="1000"/', 'tabindex="-1"', $html );
 }, 20 );
+
+/* ---------- Bilder für Google (Bild-Sitemap, Schema) ---------- */
+
+/**
+ * Alle Bilder einer Seite: Beitragsbild zuerst, dann jedes Bild im Inhalt (Klasse wp-image-ID),
+ * ohne Doppelte. Rückgabe: Attachment-IDs.
+ */
+function tb_seo_page_image_ids( int $post_id ): array {
+	$ids   = [];
+	$thumb = (int) get_post_thumbnail_id( $post_id );
+	if ( $thumb ) {
+		$ids[] = $thumb;
+	}
+	if ( preg_match_all( '/wp-image-(\d+)/', (string) get_post_field( 'post_content', $post_id ), $m ) ) {
+		$ids = array_merge( $ids, array_map( 'intval', $m[1] ) );
+	}
+	return array_values( array_unique( array_filter( $ids, static fn ( int $id ): bool => wp_attachment_is_image( $id ) ) ) );
+}
+
+/**
+ * Indexierbare Seiten (veröffentlicht, nicht noindex).
+ */
+function tb_seo_indexable_pages(): array {
+	return array_filter(
+		get_posts( [ 'post_type' => 'page', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => 'menu_order', 'order' => 'ASC' ] ),
+		static fn ( WP_Post $p ): bool => ! get_post_meta( $p->ID, '_genesis_noindex', true )
+	);
+}
+
+/**
+ * Bild-Sitemap /sitemap-images.xml: pro Seite alle darauf gezeigten Bilder (grösste Version).
+ * Google findet so auch die Bilder der Bildfolge, die beim Laden versteckt sind und lazy laden.
+ */
+add_action( 'template_redirect', static function (): void {
+	$path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+	if ( $path !== 'sitemap-images.xml' ) {
+		return;
+	}
+	if ( ! get_option( 'blog_public' ) ) {
+		status_header( 404 );
+		exit;
+	}
+	status_header( 200 );
+	header( 'Content-Type: application/xml; charset=UTF-8' );
+	header( 'X-Robots-Tag: noindex, follow' );
+	echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+	echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
+	foreach ( tb_seo_indexable_pages() as $page ) {
+		$images = tb_seo_page_image_ids( $page->ID );
+		if ( ! $images ) {
+			continue;
+		}
+		echo "\t<url>\n\t\t<loc>" . esc_url( get_permalink( $page ) ) . "</loc>\n";
+		echo "\t\t<lastmod>" . esc_html( get_post_modified_time( 'c', true, $page ) ) . "</lastmod>\n";
+		foreach ( $images as $id ) {
+			echo "\t\t<image:image><image:loc>" . esc_url( (string) wp_get_attachment_image_url( $id, 'full' ) ) . "</image:loc></image:image>\n";
+		}
+		echo "\t</url>\n";
+	}
+	echo "</urlset>\n";
+	exit;
+}, 0 );
+
+/**
+ * Bild-Sitemap in robots.txt eintragen (zusätzlich zur Seiten-Sitemap von The SEO Framework).
+ */
+add_filter( 'robots_txt', static function ( string $output, bool $public ): string {
+	if ( $public ) {
+		$output = rtrim( $output ) . "\nSitemap: " . home_url( '/sitemap-images.xml' ) . "\n";
+	}
+	return $output;
+}, 99, 2 );
+
+/**
+ * Schema: jede Seite listet ihre Bilder als ImageObject (mit Beschreibung = Alt-Text);
+ * das Beitragsbild ist das Hauptbild der Seite. Auf der Startseite ist Thierry Bill
+ * als Person verknüpft (about), damit Google die Fotos der Person zuordnen kann.
+ */
+add_filter( 'the_seo_framework_schema_graph_data', static function ( array $graph ): array {
+	if ( ! is_singular( 'page' ) ) {
+		return $graph;
+	}
+	$ids = tb_seo_page_image_ids( (int) get_queried_object_id() );
+	if ( ! $ids ) {
+		return $graph;
+	}
+	$person = [ '@id' => home_url( '/#/schema/Person' ) ];
+	$images = [];
+	foreach ( $ids as $id ) {
+		$src = wp_get_attachment_image_src( $id, 'full' );
+		if ( ! $src ) {
+			continue;
+		}
+		$images[] = array_filter( [
+			'@type'      => 'ImageObject',
+			'@id'        => $src[0],
+			'url'        => $src[0],
+			'contentUrl' => $src[0],
+			'width'      => $src[1],
+			'height'     => $src[2],
+			'caption'    => (string) get_post_meta( $id, '_wp_attachment_image_alt', true ),
+			'about'      => $person,
+		] );
+	}
+	foreach ( $graph as &$entity ) {
+		if ( ( $entity['@type'] ?? '' ) === 'WebPage' ) {
+			$entity['primaryImageOfPage'] = [ '@id' => $images[0]['@id'] ];
+			$entity['image']              = $images;
+		}
+	}
+	unset( $entity );
+	return $graph;
+}, 20 );

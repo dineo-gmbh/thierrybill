@@ -101,6 +101,8 @@ Dazu eigene Meta-Beschreibungen (statt automatisch aus dem Seitentext), Beitrags
 
 **Theme (Ladezeit):** Schriften Inter und Ballet (35 KB) vorgeladen; Bildgrösse `tb-600` als Zwischenstufe im srcset; passende `sizes` je Bildtyp; nur das erste Hero-Bild lädt sofort (`fetchpriority="high"`), alle anderen lazy; Grau auf Kontrast 4.9:1 angehoben.
 
+**Bilder für Google:** Bild-Sitemap `/sitemap-images.xml` (pro indexierbarer Seite alle gezeigten Bilder in voller Grösse, auch die versteckten der Bildfolge), in `robots.txt` eingetragen. Im Schema listet jede Seite ihre Bilder als `ImageObject` mit Alt-Text als Beschreibung und Verweis auf die Person; das Beitragsbild ist `primaryImageOfPage`. Dateinamen und Alt-Texte enthalten «Thierry Bill». Neue Bilder erscheinen automatisch, sobald sie in einer Seite stehen.
+
 **Sitemap/robots:** `/sitemap.xml` (Start, Musik, Tattoo, Grafik, Kontakt), in `robots.txt` eingetragen. Lokal ist die Seite absichtlich `noindex` (`blog_public` = 0).
 
 ## Plugins
@@ -143,7 +145,7 @@ Ersteinrichtung (einmalig erledigt am 16.10.2026): lokale Datenbank **ohne** `wp
 
 - SPF-Eintrag in der Zone anpassen, damit Formular-Mails von Mittwald nicht im Spam landen: `v=spf1 include:agenturserver.de ~all` (wie milanslick) statt `v=spf1 +a +mx ?all`; danach Kontaktformular testen (Empfänger tjb1612@gmail.com). Landen Mails trotzdem im Spam: WP Mail SMTP mit einem Mittwald-Postfach einrichten
 - MX-Eintrag `dedi3600.your-server.de` entfernen (keine Postfächer für die Domain)
-- Google Search Console: Domain bestätigen, `https://thierrybill.ch/sitemap.xml` einreichen
+- Google Search Console: Domain bestätigen, `https://thierrybill.ch/sitemap.xml` und `https://thierrybill.ch/sitemap-images.xml` einreichen
 - Instagram- und Facebook-Profil auf `https://thierrybill.ch` verlinken
 - Mehr Tattoo-Fotos und echte Grafik-Arbeiten in die Bildfolgen aufnehmen (Grafik zeigt bisher nur das Fotoshooting-Bild)
 - Admin-Passwort auf Produktion prüfen (Mittwald-Installation)
