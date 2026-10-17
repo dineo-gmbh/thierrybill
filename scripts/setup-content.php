@@ -180,12 +180,12 @@ $seo = [
 	],
 	'tattoo'      => [
 		'title'       => 'Tattoo – Custom Tattoos & Linework von Thierry Bill',
-		'description' => 'Individuelle Tattoos nach eigenen Entwürfen: Thierry Bill gestaltet custom Designs gemeinsam mit dir. Jetzt Tattoo anfragen – per Formular oder Instagram.',
+		'description' => 'Thierry Bill sticht Tattoos nach eigenen Zeichnungen: feine Linien, organische Formen, jedes ein Einzelstück. Anfragen per Formular oder Instagram.',
 		'image'       => 'tattoo-1',
 	],
 	'grafik'      => [
 		'title'       => 'Grafikdesign – Thierry Bill, Mediamatiker EFZ',
-		'description' => 'Grafikdesign, Webdesign, E-Commerce, Fotografie und Layout: Thierry Bill (Mediamatiker EFZ) setzt visuelle Konzepte klar, funktional und ästhetisch um.',
+		'description' => 'Thierry Bill (Mediamatiker EFZ) gestaltet Websites, Logos und Layouts und fotografiert – schön und einfach zu benutzen.',
 		'image'       => 'portrait-bewegung',
 	],
 	'kontakt'     => [

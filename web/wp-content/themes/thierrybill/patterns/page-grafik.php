@@ -11,9 +11,9 @@ echo tb_hero( 'Grafik', 'Design + Web + Fotografie', [ 'portrait-bewegung' ] );
 echo tb_spread(
 	tb_cell( 'tb-at-1 tb-w-4', tb_title( 'Über', 0 ) )
 	. tb_cell( 'tb-at-5 tb-w-6',
-		tb_big( 'Grafikdesign: visuelle Konzepte, klar, funktional und ästhetisch umgesetzt.', true )
-		. tb_p( 'Ich habe die Ausbildung zum Mediamatiker EFZ bei der biwac Webagentur abgeschlossen. Dort habe ich an vielfältigen digitalen Projekten gearbeitet, von Design und Layout über Websites und E-Commerce bis zur Fotografie.' )
-		. tb_p( 'Gestaltung und Technik gehören für mich zusammen: Ich denke digitale Inhalte ganzheitlich.' )
+		tb_big( 'Ich gestalte Websites, Logos, Layouts und mache Fotos.', true )
+		. tb_p( 'Gelernt habe ich Mediamatiker bei der biwac Webagentur. Dort habe ich an ganz unterschiedlichen Projekten mitgearbeitet: Websites, Onlineshops, Layouts und Fotoshootings.' )
+		. tb_p( 'Mir ist wichtig, dass etwas nicht nur gut aussieht, sondern auch einfach funktioniert. Wenn du Hilfe bei einem Auftritt, einem Logo oder einer Website brauchst, schreib mir.' )
 	)
 );
 

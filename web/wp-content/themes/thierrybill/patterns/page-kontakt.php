@@ -14,8 +14,8 @@ echo tb_hero( 'Kontakt', 'Booking + Tattoo + Design' );
 echo tb_spread(
 	tb_cell( 'tb-at-1 tb-w-4', tb_title( 'Nachricht', 0 ) )
 	. tb_cell( 'tb-at-5 tb-w-6',
-		tb_big( 'Ich freue mich auf deine Nachricht.', true )
-		. tb_p( 'Für Booking, Studio-Sessions, Tattoo-Anfragen oder Designprojekte.' )
+		tb_big( 'Schreib mir!', true )
+		. tb_p( 'Egal ob Konzert, Studio, Tattoo oder Design: Ich freue mich über deine Nachricht und melde mich so schnell wie möglich.' )
 		. "<!-- wp:shortcode -->\n$code\n<!-- /wp:shortcode -->\n"
 		. tb_details( [
 			[ 'Instagram', '<a href="https://www.instagram.com/billthierryjoel/" target="_blank" rel="noreferrer noopener">@billthierryjoel</a>' ],
