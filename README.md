@@ -79,7 +79,7 @@ Ziel: jede Seite eindeutig beschrieben, sauber gegliedert, schnell. Lighthouse (
 | Seite | Title | Social-Bild |
 |---|---|---|
 | Start | Thierry Bill – Musiker, Tattoo-Artist & Grafikdesigner | Porträt |
-| Musik | Musik – Jazz-Gitarrist Thierry Bill | Live (gestreiftes Hemd) |
+| Musik | Musik – Gitarrist Thierry Bill | Live (gestreiftes Hemd) |
 | Tattoo | Tattoo – Custom Tattoos & Linework von Thierry Bill | Tattoo-Foto |
 | Grafik | Grafikdesign – Thierry Bill, Mediamatiker EFZ | Porträt an der Brücke |
 | Kontakt | Kontakt – Thierry Bill | Porträt |

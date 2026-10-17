@@ -170,12 +170,12 @@ WP_CLI::log( "Navigation #$nav_id" );
 $seo = [
 	'start'       => [
 		'title'       => 'Thierry Bill – Musiker, Tattoo-Artist & Grafikdesigner',
-		'description' => 'Portfolio von Thierry Bill: Jazz-Gitarrist (HSLU Luzern, Cold Touch), Tattoo-Artist mit eigenen Linework-Designs und Grafikdesigner (Mediamatiker EFZ).',
+		'description' => 'Portfolio von Thierry Bill: Gitarrist (HSLU Luzern, Cold Touch), Tattoo-Artist mit eigenen Linework-Designs und Grafikdesigner (Mediamatiker EFZ).',
 		'image'       => 'portrait',
 	],
 	'musik'       => [
-		'title'       => 'Musik – Jazz-Gitarrist Thierry Bill',
-		'description' => 'Thierry Bill ist Jazz-Gitarrist (Bachelor HSLU Luzern) und Lead-Gitarrist von Cold Touch aus Biel. Live u. a. im Gaskessel Bern, Bierhübeli und Mühle Hunziken.',
+		'title'       => 'Musik – Gitarrist Thierry Bill',
+		'description' => 'Thierry Bill ist Gitarrist (Studium an der HSLU Luzern) und Lead-Gitarrist von Cold Touch aus Biel. Live u. a. im Gaskessel Bern, Bierhübeli und Mühle Hunziken.',
 		'image'       => 'live-streifen',
 	],
 	'tattoo'      => [

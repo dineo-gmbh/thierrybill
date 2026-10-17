@@ -52,7 +52,7 @@ function tb_seo_person_details(): array {
 	$details = [
 		'givenName'     => 'Thierry',
 		'familyName'    => 'Bill',
-		'description'   => 'Musiker (Jazz-Gitarrist), Tattoo-Artist und Grafikdesigner.',
+		'description'   => 'Musiker (Gitarrist), Tattoo-Artist und Grafikdesigner.',
 		'jobTitle'      => [ 'Gitarrist', 'Tattoo-Artist', 'Grafikdesigner' ],
 		'hasOccupation' => [
 			[ '@type' => 'Occupation', 'name' => 'Musiker' ],
@@ -63,7 +63,7 @@ function tb_seo_person_details(): array {
 		'affiliation'   => [ '@type' => 'CollegeOrUniversity', 'name' => 'Hochschule Luzern – Musik (HSLU)' ],
 		'alumniOf'      => [ '@type' => 'EducationalOrganization', 'name' => 'Swiss Jazz School Bern' ],
 		'memberOf'      => [ '@type' => 'MusicGroup', 'name' => 'Cold Touch', 'location' => 'Biel' ],
-		'knowsAbout'    => [ 'Jazz-Gitarre', 'Songwriting', 'Studio-Gitarre', 'Tattoo-Design', 'Linework-Tattoos', 'Grafikdesign', 'Webdesign', 'E-Commerce', 'Fotografie', 'Layout' ],
+		'knowsAbout'    => [ 'Gitarre', 'Songwriting', 'Studio-Gitarre', 'Tattoo-Design', 'Linework-Tattoos', 'Grafikdesign', 'Webdesign', 'E-Commerce', 'Fotografie', 'Layout' ],
 	];
 	$portrait = tb_seo_image_url( 'portrait' );
 	if ( $portrait ) {
