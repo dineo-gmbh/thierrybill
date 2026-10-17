@@ -26,5 +26,5 @@ echo tb_spread(
 
 echo tb_spread(
 	tb_cell( 'tb-at-1 tb-w-4', tb_title( 'Über mich' ) )
-	. tb_cell( 'tb-at-5 tb-w-4', tb_p( 'Hoi, ich bin Thierry. Am liebsten stehe ich mit der Gitarre auf der Bühne, zeichne Tattoos oder sitze an einem Designprojekt.' ) . tb_p( 'Mich interessiert vieles, und am meisten Spass macht es mir, wenn etwas Eigenes entsteht. Schau dich um, und wenn du Lust auf etwas Gemeinsames hast: schreib mir.' ) )
+	. tb_cell( 'tb-at-5 tb-w-4', tb_p( 'Ich bin Thierry. Am liebsten stehe ich mit der Gitarre auf der Bühne, zeichne Tattoos oder sitze an einem Designprojekt.' ) . tb_p( 'Mich interessiert vieles, und am meisten Spass macht es mir, wenn etwas Eigenes entsteht. Schau dich um, und wenn du Lust auf etwas Gemeinsames hast: schreib mir.' ) )
 );
