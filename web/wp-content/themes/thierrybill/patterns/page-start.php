@@ -20,7 +20,7 @@ echo tb_hero(
 echo tb_spread(
 	tb_cell( 'tb-at-1 tb-w-4', tb_tile( 'live-streifen', 'Musik', tb_page_url( 'musik' ) ) )
 	. tb_cell( 'tb-at-5 tb-w-4', tb_tile( 'tattoo-1', 'Tattoo', tb_page_url( 'tattoo' ) ) )
-	. tb_cell( 'tb-at-9 tb-w-4', tb_tile( 'portrait-duo', 'Grafik', tb_page_url( 'grafik' ) ) ),
+	. tb_cell( 'tb-at-9 tb-w-4', tb_tile( 'portrait-bewegung', 'Grafik', tb_page_url( 'grafik' ) ) ),
 	'tb-tiles'
 );
 
