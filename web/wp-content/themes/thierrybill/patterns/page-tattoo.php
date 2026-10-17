@@ -6,7 +6,7 @@
  * Description: Seite Tattoo: Hero mit Bildfolge (Arbeiten), Text, Anfrage.
  */
 
-echo tb_hero( 'Tattoo', 'Custom Designs + Linework', [ 'tattoo-1' ] );
+echo tb_hero( 'Tattoo', 'Custom Designs + Linework', [ 'tattoo-knie-teich', 'tattoo-bein', 'tattoo-1', 'tattoo-knie-detail', 'tattoo-knie-oben', 'tattoo-oberschenkel' ] );
 
 echo tb_spread(
 	tb_cell( 'tb-at-1 tb-w-4', tb_title( 'Über', 0 ) )

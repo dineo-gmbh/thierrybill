@@ -21,6 +21,11 @@ $tb_images = [
 	'live-scheune'       => [ 'Thierry Bill live in der Scheune', 'Thierry Bill in Lederjacke und Cap spielt E-Gitarre in einer Scheune' ],
 	'band-bruecke'       => [ 'Bandfoto an der Betonbrücke', 'Schwarz-Weiss-Bandfoto: vier Musiker vor einer geschwungenen Betonbrücke, darunter Thierry Bill' ],
 	'villa-graffiti'     => [ 'Fotoshooting in der Villa', 'Schwarz-Weiss-Foto: Thierry Bill lachend mit Freundinnen und Freunden in einem leerstehenden Altbau mit Graffiti' ],
+	'tattoo-knie-teich'  => [ 'Tattoo von Thierry Bill, Knie', 'Linework-Tattoo von Thierry Bill: filigrane, verästelte Ornamente mit feinen Strahlen über Knie und Oberschenkel' ],
+	'tattoo-bein'        => [ 'Tattoo von Thierry Bill, Bein', 'Linework-Tattoo von Thierry Bill: organische Ornamente ziehen sich vom Knie über das ganze Schienbein' ],
+	'tattoo-knie-detail' => [ 'Tattoo von Thierry Bill, Knie Detail', 'Nahaufnahme eines Linework-Tattoos von Thierry Bill: verästelte Schlaufen mit feinen Strahlen über dem Knie' ],
+	'tattoo-knie-oben'   => [ 'Tattoo von Thierry Bill, Knie von oben', 'Linework-Tattoos von Thierry Bill auf beiden Knien, von oben fotografiert' ],
+	'tattoo-oberschenkel' => [ 'Tattoo von Thierry Bill, Oberschenkel', 'Nahaufnahme eines verheilten Linework-Tattoos von Thierry Bill auf dem Oberschenkel: Kreise und verästelte Linien' ],
 ];
 
 require_once ABSPATH . 'wp-admin/includes/media.php';
