@@ -108,6 +108,14 @@ ddev wp eval-file scripts/legal-content.php   # lokal, nur die zwei Rechtsseiten
 
 Produktion: Datei hochladen und auf dem Server `wp eval-file` ausführen (siehe Deployment).
 
+**Einzelne Seiten aus den Patterns neu erzeugen** (z. B. nach Änderungen an `patterns/page-start.php`), ohne den Rest anzufassen:
+
+```bash
+ddev wp eval-file scripts/render-pages.php start musik   # lokal
+```
+
+Produktion: `scripts/render-pages.php` hochladen, dann auf dem Server `wp eval-file render-pages.php start`. Achtung: überschreibt Änderungen, die im Editor an diesen Seiten gemacht wurden.
+
 ## Deployment (Mittwald)
 
 Produktion: https://thierrybill.ch, Mittwald-Projekt «thierrybill», App «thierrybill-wp» (`a-es3wr7`), Projekt-User `p-b6amzs`, Pfad `/home/p-b6amzs/html/thierrybill-wp` (WordPress direkt im Ordner, nicht in `web/`). SSH: `ssh-qsz9am@a-es3wr7@ssh.isenstedt.project.host` mit `~/.ssh/id_ed25519`. Mittwald-IP: `185.215.158.240`.

@@ -16,6 +16,9 @@ if ( ! class_exists( 'WPCF7_ContactForm' ) ) {
 // Pattern-Liste des Themes neu einlesen (WordPress cached sie ausserhalb des Entwicklungsmodus).
 wp_get_theme()->delete_pattern_cache();
 
+// Patterns enthalten SVG (Pfeile); ohne diese Zeile entfernt der Inhaltsfilter sie beim Speichern.
+kses_remove_filters();
+
 /* ---------- Helfer ---------- */
 
 // Pattern-Datei rendern, Asset-URLs relativ, damit der Inhalt auf jeder Domain stimmt.

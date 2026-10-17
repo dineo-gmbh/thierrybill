@@ -270,6 +270,14 @@ function tb_placeholder( string $label, string $ratio = 'tb-r-45' ): string {
 }
 
 /**
+ * Pfeil nach rechts unten als SVG. Das Zeichen «↘» zeigt iOS als Emoji an, das SVG sieht
+ * ueberall gleich aus und uebernimmt die Textfarbe.
+ */
+function tb_arrow_svg(): string {
+	return '<svg class="tb-arrow" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 2.5l7 7M9.5 3.5v6h-6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="square"/></svg>';
+}
+
+/**
  * Hero: grosser Titel mit kleiner Unterzeile (rechtsbuendig unter dem Titel), rechts eine
  * Bildfolge mit Zaehler («01/05», Klick oder automatisch weiter, assets/js/thierrybill.js),
  * unten links Pfeil-Links. Ohne Bilder bzw. Links entfallen die Bereiche.
@@ -299,7 +307,7 @@ function tb_hero( string $title, string $subtitle, array $images = [], array $li
 	if ( $links ) {
 		$html = '';
 		foreach ( $links as [ $text, $url ] ) {
-			$html .= sprintf( '<a href="%s">%s <span aria-hidden="true">↘</span></a>', esc_url( $url ), esc_html( $text ) );
+			$html .= sprintf( '<a href="%s">%s %s</a>', esc_url( $url ), esc_html( $text ), tb_arrow_svg() );
 		}
 		$inner .= tb_cell( 'tb-at-1 tb-w-8 tb-hero__links', tb_p( $html ) );
 	}

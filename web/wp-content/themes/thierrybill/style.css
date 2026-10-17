@@ -319,9 +319,12 @@ h2.tb-big {
 	text-decoration: underline !important;
 }
 
-.tb-hero__links span {
+.tb-hero__links .tb-arrow {
 	display: inline-block;
-	margin-left: 0.2em;
+	width: 0.7em;
+	height: 0.7em;
+	margin-left: 0.05em;
+	vertical-align: -0.05em;
 }
 
 /* ---------- Header ---------- */
