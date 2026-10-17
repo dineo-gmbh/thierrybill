@@ -42,7 +42,7 @@ Helfer in `functions.php` für die Patterns: `tb_hero()`, `tb_spread()`, `tb_cel
 | Start | `/` | Hero «Thierry Bill» mit Bildfolge (6 Fotos), drei Bereiche mit Foto, Über mich |
 | Musik | `/musik/` | Hero mit 5 Fotos (live und Band), Über, Details (Band, Studium, Studio, Bühnen) |
 | Tattoo | `/tattoo/` | Hero mit Tattoo-Fotos, Über, Anfrage |
-| Grafik | `/grafik/` | Hero mit Foto, Über, Details |
+| Grafik | `/grafik/` | Hero mit 2 Fotos, Über, Details |
 | Kontakt | `/kontakt/` | Hero ohne Bild, Formular (Thema: Musik/Booking, Studio, Tattoo, Grafik, Anderes), Instagram, Facebook |
 | Impressum, Datenschutz | `/impressum/`, `/datenschutz/` | Rechtstexte aus `scripts/legal-content.php` (Schweizer DSG, soweit anwendbar DSGVO) |
 
