@@ -575,3 +575,9 @@ h2.tb-big {
 		column-gap: 0.5rem;
 	}
 }
+
+/* Cloudflare Turnstile (Spamschutz) im Kontaktformular */
+.tb-turnstile {
+	margin: 0.5rem 0 1.5rem;
+	min-height: 65px;
+}

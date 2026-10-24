@@ -89,6 +89,8 @@ $form_body = <<<'FORM'
 
 [honeypot website]
 
+<div class="tb-turnstile">[turnstile theme:light language:de action:kontakt]</div>
+
 [submit "Nachricht senden"]
 FORM;
 

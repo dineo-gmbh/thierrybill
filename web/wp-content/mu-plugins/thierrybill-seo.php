@@ -311,3 +311,50 @@ add_filter( 'the_seo_framework_schema_graph_data', static function ( array $grap
 	unset( $entity );
 	return $graph;
 }, 20 );
+
+/* ---------- Cloudflare Turnstile: strengere Siteverify-Prüfung ---------- */
+
+/**
+ * Contact Form 7 prüft bei Turnstile nur «success». Nach den Vorgaben von Cloudflare
+ * wird hier zusätzlich verlangt: Token höchstens 2048 Zeichen, IP-Adresse des Besuchers
+ * an Siteverify mitsenden, Aktion «kontakt» und Hostname aus der erlaubten Liste.
+ * Die Schlüssel stehen nicht im Code, sondern in der WP-Option von Contact Form 7.
+ */
+function tb_turnstile_allowed_hostnames(): array {
+	$hosts = [ 'thierrybill.ch', 'www.thierrybill.ch' ];
+	if ( wp_get_environment_type() !== 'production' && str_ends_with( (string) wp_parse_url( home_url(), PHP_URL_HOST ), '.ddev.site' ) ) {
+		$hosts[] = (string) wp_parse_url( home_url(), PHP_URL_HOST );
+	}
+	return $hosts;
+}
+
+// IP-Adresse des Besuchers an Siteverify mitsenden.
+add_filter( 'http_request_args', static function ( array $args, string $url ): array {
+	if ( str_starts_with( $url, 'https://challenges.cloudflare.com/turnstile/v0/siteverify' ) && is_array( $args['body'] ?? null ) && ! empty( $_SERVER['REMOTE_ADDR'] ) ) {
+		$args['body']['remoteip'] = sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) );
+		$args['timeout']          = 10;
+	}
+	return $args;
+}, 10, 2 );
+
+// Nach der Prüfung von Contact Form 7 (Priorität 9): Länge, Aktion und Hostname kontrollieren.
+add_filter( 'wpcf7_spam', static function ( $spam, $submission ) {
+	if ( $spam || ! class_exists( 'WPCF7_Turnstile' ) || ! WPCF7_Turnstile::get_instance()->is_active() ) {
+		return $spam;
+	}
+	$token  = (string) wpcf7_superglobal_post( '_wpcf7_turnstile_response' );
+	$result = (array) ( $submission->pull( 'turnstile' )['response'] ?? [] );
+	$reason = '';
+	if ( strlen( $token ) > 2048 ) {
+		$reason = 'Token zu lang';
+	} elseif ( ( $result['action'] ?? '' ) !== 'kontakt' ) {
+		$reason = 'Falsche Aktion: ' . ( $result['action'] ?? '–' );
+	} elseif ( ! in_array( $result['hostname'] ?? '', tb_turnstile_allowed_hostnames(), true ) ) {
+		$reason = 'Hostname nicht erlaubt: ' . ( $result['hostname'] ?? '–' );
+	}
+	if ( $reason ) {
+		$submission->add_spam_log( [ 'agent' => 'turnstile', 'reason' => $reason ] );
+		return true;
+	}
+	return $spam;
+}, 20, 2 );

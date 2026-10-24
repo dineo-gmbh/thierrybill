@@ -127,6 +127,18 @@ ddev wp eval-file scripts/render-pages.php start musik   # lokal
 
 Produktion: `scripts/render-pages.php` hochladen, dann auf dem Server `wp eval-file render-pages.php start`. Achtung: überschreibt Änderungen, die im Editor an diesen Seiten gemacht wurden.
 
+## Spamschutz (Cloudflare Turnstile)
+
+Das Kontaktformular hat ein Honeypot-Feld und `[turnstile theme:light language:de action:kontakt]` (in Contact Form 7 eingebaut). Site Key `0x4AAAAAAFjuvj6ssLXcrMOa`. Der **Secret Key gehört nicht ins Git**; er steht nur in der WP-Option von Contact Form 7 auf dem Server:
+
+```bash
+wp eval 'WPCF7::update_option( "turnstile", [ "SITE_KEY" => "SECRET_KEY" ] );'
+```
+
+Lokal sind die Cloudflare-Testschlüssel hinterlegt (`1x00000000000000000000AA` / `1x0000000000000000000000000000000AA`). Formulare in bestehenden Installationen nachrüsten: `wp eval-file scripts/turnstile-forms.php`.
+
+Contact Form 7 prüft bei Siteverify nur `success`. Das MU-Plugin prüft zusätzlich nach den Vorgaben von Cloudflare: Token höchstens 2048 Zeichen, IP-Adresse des Besuchers wird mitgesendet, Aktion muss `kontakt` sein, Hostname muss `thierrybill.ch` oder `www.thierrybill.ch` sein (lokal zusätzlich die DDEV-Adresse). Abgelehnte Anfragen landen mit Grund im Spam-Log von Contact Form 7.
+
 ## Deployment (Mittwald)
 
 Produktion: https://thierrybill.ch, Mittwald-Projekt «thierrybill», App «thierrybill-wp» (`a-es3wr7`), Projekt-User `p-b6amzs`, Pfad `/home/p-b6amzs/html/thierrybill-wp` (WordPress direkt im Ordner, nicht in `web/`). SSH: `ssh-qsz9am@a-es3wr7@ssh.isenstedt.project.host` mit `~/.ssh/id_ed25519`. Mittwald-IP: `185.215.158.240`.
